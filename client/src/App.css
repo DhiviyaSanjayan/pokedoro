@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.login-body {
+  background-image: url("../assets/loginpage-bg.png");
+  height: 100%;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  padding: 10px;
+  display: flex;
+  font-family: "Press Start 2P";
+  flex-direction: column;
+  height: 23%;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff2522;
+  border-radius: 9px;
+  margin-top: 14%;
+}
+
+.login-title {
+  font-size: 26px;
+  letter-spacing: -1.5px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: whitesmoke;
+  border: none;
+  border-bottom: 1px solid bisque;
+  outline: none;
+  background: transparent;
+}
+
+.login-form a {
+  font-size: 11px;
+}
+
+.login-button {
+  font-family: "Press Start 2P";
+  background-color: #ececec;
+  border-radius: 5px;
+  width: 100%;
+  height: 46px;
+  font-size: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #c6c6c6;
+}
