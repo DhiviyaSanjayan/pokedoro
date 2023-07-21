@@ -54,7 +54,7 @@ export default function RegisterForm() {
   return (
     <div className="login-body">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h1>Register</h1>
+        <h1 className="login-title">Register</h1>
         <input
           type="text"
           className="login-input"

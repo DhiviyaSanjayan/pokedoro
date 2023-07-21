@@ -40,6 +40,11 @@ html {
   margin-top: 14%;
 }
 
+.login-title {
+  font-size: 26px;
+  letter-spacing: -1.5px;
+}
+
 .login-input {
   width: 100%;
   padding: 10px 0;
