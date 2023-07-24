@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @font-face {
   font-family: "digital-clock";
@@ -222,4 +221,3 @@ html {
 .controls button:hover {
   background-color: rgba(130, 130, 130, 0.8);
 }
-
