@@ -1,3 +1,225 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@font-face {
+  font-family: "digital-clock";
+  src: url("../assets/digital-7.ttf");
+}
 
-    
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.login-body {
+  background-image: url("../assets/loginpage-bg.png");
+  height: 100%;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  padding: 10px;
+  display: flex;
+  font-family: "Press Start 2P";
+  flex-direction: column;
+  height: 23%;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff2522;
+  border-radius: 9px;
+  margin-top: 14%;
+}
+
+.login-title {
+  font-size: 26px;
+  letter-spacing: -1.5px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: whitesmoke;
+  border: none;
+  border-bottom: 1px solid bisque;
+  outline: none;
+  background: transparent;
+}
+
+.login-form a {
+  font-size: 11px;
+}
+
+.login-button {
+  font-family: "Press Start 2P";
+  background-color: #ececec;
+  border-radius: 5px;
+  width: 100%;
+  height: 46px;
+  font-size: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #c6c6c6;
+}
+
+.timer-page {
+  background-image: url("../assets/pokemon-bg.png");
+  height: 100%;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  background-color: rgba(34, 33, 32, 0.8);
+  border-radius: 5%;
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.8),
+    0 25px 55px 0 rgba(0, 0, 0, 0.21);
+  font-family: "Press Start 2P";
+  width: 33%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.timer-image {
+  width: 100%;
+}
+
+.progress-radial {
+  display: inline-block;
+  position: relative;
+  font-size: 2.2em;
+  width: 6em;
+  padding-bottom: 6em;
+  margin-top: 5px;
+  border-radius: 50%;
+  background-color: #00a0b0;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #eae9e5;
+  font-family: "digital-clock";
+  /* padding-top: 34%; */
+}
+
+.session .overlay {
+  color: #00a0b0;
+}
+
+.break .overlay {
+  color: #ff2522;
+}
+
+.session-info,
+.settings,
+.controls {
+  color: #dadadb;
+}
+
+.settings {
+  border-top: 1px dotted #818184;
+  border-bottom: 1px dotted #818184;
+}
+
+.time-session,
+.time-break {
+  display: inline-block;
+  padding: 20px;
+}
+
+.time-session h6,
+.time-break h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.time-session button,
+.time-break button {
+  background-color: rgba(8, 8, 8, 0.7);
+  border: none;
+  border-radius: 4px;
+  color: #dadadb;
+  transition: background-color 0.2s ease-in-out;
+  width: 30px;
+}
+
+.time-session button:hover,
+.time-break button:hover {
+  background-color: rgba(130, 130, 130, 0.8);
+}
+
+.time-session-display,
+.time-break-display {
+  margin-bottom: 8px;
+  margin-top: 0px;
+  line-height: 1em;
+}
+
+.time-session-display {
+  color: #00a0b0;
+}
+
+.time-break-display {
+  color: #ff2522;
+}
+
+.controls {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.controls button {
+  background-color: rgba(8, 8, 8, 0.7);
+  border: none;
+  border-radius: 4px;
+  color: #dadadb;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease-in-out;
+  height: 40px;
+  width: 70px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.controls button:hover {
+  background-color: rgba(130, 130, 130, 0.8);
+}
+
