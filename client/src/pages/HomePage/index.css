@@ -1,0 +1,37 @@
+
+h1 {
+    background-color: blue;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+@media (min-width: 1024px) {
+    h1 {
+        background-color: blue;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        background-color: blue;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+}
+
+
+@media (max-width: 767px) {
+    h1 {
+        background-color: blue;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+}
