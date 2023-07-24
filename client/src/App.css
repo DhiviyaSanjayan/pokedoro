@@ -19,7 +19,7 @@ html {
 
 .login-body {
   background-image: url("../assets/loginpage-bg.png");
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -81,7 +81,7 @@ html {
 
 .timer-page {
   background-image: url("../assets/pokemon-bg.png");
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -178,6 +178,7 @@ html {
   color: #dadadb;
   transition: background-color 0.2s ease-in-out;
   width: 30px;
+  cursor: pointer;
 }
 
 .time-session button:hover,
@@ -216,8 +217,39 @@ html {
   width: 70px;
   margin-left: 15px;
   margin-right: 15px;
+  cursor: pointer;
 }
 
 .controls button:hover {
   background-color: rgba(130, 130, 130, 0.8);
+}
+
+.collection-page {
+  height: 100%;
+  width: 100%;
+  background-color: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection-grid {
+  margin-top: 50px;
+  top: 180px;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.collection-image {
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.collection-image:hover {
+  scale: 1.05;
 }
