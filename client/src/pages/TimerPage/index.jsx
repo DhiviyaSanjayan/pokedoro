@@ -15,7 +15,7 @@ export default function TimerPage() {
   useEffect(() => {
     fetchPokemon(id);
     fetchNextPokemon();
-  }, [id]);
+  }, [id, secondsLeft, breakSecondsLeft]);
 
   async function fetchPokemon(id) {
     try {
@@ -128,7 +128,7 @@ export default function TimerPage() {
       setIsbreak(false);
       document.querySelector(".time-start").textContent = "Start";
       clearInterval(timer);
-      nextPokemon.id ? navigate(`/timer/${nextPokemon.id}`) : null;
+      navigate(`/timer/${nextPokemon.id}`);
     }
   }, [breakSecondsLeft, timer]);
 
