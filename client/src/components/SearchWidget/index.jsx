@@ -13,7 +13,7 @@ export default function SearchWidget() {
         const response = await fetch('../../pokemon.json');
         const rawData = await response.json();
         
-        // Filter the Pokemon data based on the searchString
+        
         const filteredData = rawData.filter((pokemon) =>
           pokemon.name.toLowerCase().includes(searchString.toLowerCase())
         );

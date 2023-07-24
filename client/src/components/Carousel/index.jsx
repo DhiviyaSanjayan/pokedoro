@@ -4,7 +4,7 @@ export default function PokemonCarousel() {
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
-    // Fetch the data from the JSON endpoint
+    
     fetch("../../pokemon.json")
       .then((response) => response.json())
       .then((data) => setPokemon(data))
