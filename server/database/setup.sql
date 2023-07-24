@@ -7,7 +7,7 @@ CREATE TABLE users (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   email VARCHAR(100),
-  -- password CHAR(10),
+  pass_word VARCHAR(100),
   time_studied INT,
   PRIMARY KEY (users_id)
 );
@@ -20,15 +20,15 @@ CREATE TABLE token (
     FOREIGN KEY (users_id) REFERENCES users("users_id")
 );
 
-INSERT INTO users (username, first_name, last_name, email, time_studied)
+INSERT INTO users (username, first_name, last_name, email, pass_word, time_studied)
 VALUES
-    ('ronaldo_7', 'Cristiano', 'Ronaldo', 'cristiano.ronaldo@example.com', 25),
-    ('leomessi10', 'Lionel', 'Messi', 'lionel.messi@example.com', 50),
-    ('neymarjr10', 'Neymar', 'Junior', 'neymar.junior@example.com', 40),
-    ('mbappe_7', 'Kylian', 'Mbappe', 'kylian.mbappe@example.com', 0),
-    ('ronaldinho10', 'Ronaldinho', 'Gaucho', 'ronaldinho.gaucho@example.com', 120),
-    ('zidane_5', 'Zinedine', 'Zidane', 'zinedine.zidane@example.com', 80),
-    ('beckham_23', 'David', 'Beckham', 'david.beckham@example.com', 45),
-    ('kaka_22', 'Kaka', 'Da Silva', 'kaka.dasilva@example.com', 60),
-    ('rooney_9', 'Wayne', 'Rooney', 'wayne.rooney@example.com', 70),
-    ('puyol_5', 'Carles', 'Puyol', 'carles.puyol@example.com', 5);
+     ('ronaldo7', 'Cristiano', 'Ronaldo', 'cristiano@example.com', 'secure_password', 150),
+  ('messi10', 'Lionel', 'Messi', 'lionel@example.com', 'strong_password', 130),
+  ('neymarjr', 'Neymar', 'da Silva Santos', 'neymar@example.com', 'safepassword', 110),
+  ('mbappe7', 'Kylian', 'Mbappe', 'kylian@example.com', 'bestpassword', 100),
+  ('ronaldinho10', 'Ronaldinho', 'de Assis Moreira', 'ronaldinho@example.com', 'mypassword', 90),
+  ('beckham23', 'David', 'Beckham', 'david@example.com', 'beckham123', 80),
+  ('zidane5', 'Zinedine', 'Zidane', 'zidane@example.com', 'zidane456', 70),
+  ('pele10', 'Edson Arantes', 'do Nascimento', 'pele@example.com', 'pele789', 60),
+  ('maradona10', 'Diego', 'Maradona', 'maradona@example.com', 'maradona987', 50),
+  ('eusebio13', 'Eusébio', 'da Silva Ferreira', 'eusebio@example.com', 'eusebio654', 40);
