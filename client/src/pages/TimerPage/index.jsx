@@ -3,17 +3,19 @@ import { useParams, useNavigate } from "react-router-dom";
 
 export default function TimerPage() {
   const [secondsLeft, setSecondsLeft] = useState(3);
-  const [breakSecondsLeft, setBreakSecondsLeft] = useState(5 * 60);
+  const [breakSecondsLeft, setBreakSecondsLeft] = useState(3);
   const [timer, setTimer] = useState();
   const [running, setRunning] = useState(false);
   const [isbreak, setIsbreak] = useState(false);
   const [timerPokemon, setTimerPokemon] = useState({});
+  const [nextPokemon, setNextpokemon] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchPokemon(id);
-  }, []);
+    fetchNextPokemon();
+  }, [id, secondsLeft, breakSecondsLeft]);
 
   async function fetchPokemon(id) {
     try {
@@ -21,6 +23,22 @@ export default function TimerPage() {
       const dataArr = await response.json();
       const data = dataArr[id - 1];
       setTimerPokemon(data);
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  async function fetchNextPokemon() {
+    try {
+      const response = await fetch("../../pokemon.json");
+      const dataArr = await response.json();
+      const nextPokemonName = timerPokemon.evolves_into;
+      for (let i = 0; i < dataArr.length; i++) {
+        if (dataArr[i].name === nextPokemonName) {
+          const nextPokemonObj = dataArr[i];
+          nextPokemonName ? setNextpokemon(nextPokemonObj) : null;
+        }
+      }
     } catch (error) {
       throw new Error(error);
     }
@@ -57,8 +75,8 @@ export default function TimerPage() {
 
   const resetTimer = () => {
     if (!isbreak) {
-      setSecondsLeft(25 * 60);
-    } else setBreakSecondsLeft(5 * 60);
+      setSecondsLeft(3);
+    } else setBreakSecondsLeft(3);
   };
 
   const start = () => {
@@ -110,6 +128,7 @@ export default function TimerPage() {
       setIsbreak(false);
       document.querySelector(".time-start").textContent = "Start";
       clearInterval(timer);
+      navigate(`/timer/${nextPokemon.id}`);
     }
   }, [breakSecondsLeft, timer]);
 
@@ -141,20 +160,24 @@ export default function TimerPage() {
             style={isbreak ? { backgroundColor: "#ff2522" } : null}
           >
             <div className="main-display overlay">
-              <img
-                src={timerPokemon.sprite}
-                alt={timerPokemon.name}
-                className="timer-image"
-                style={
-                  !isbreak
-                    ? secondsLeft % 2 === 0
+              {timerPokemon.sprite ? (
+                <img
+                  src={timerPokemon.sprite}
+                  alt={timerPokemon.name}
+                  className="timer-image"
+                  style={
+                    !isbreak
+                      ? secondsLeft % 2 === 0
+                        ? { marginBottom: "5px" }
+                        : null
+                      : breakSecondsLeft % 2 === 0
                       ? { marginBottom: "5px" }
                       : null
-                    : breakSecondsLeft % 2 === 0
-                    ? { marginBottom: "5px" }
-                    : null
-                }
-              />
+                  }
+                />
+              ) : (
+                "loading"
+              )}
             </div>
           </div>
         </div>

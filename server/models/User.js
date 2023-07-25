@@ -3,17 +3,16 @@ const db = require('../database/connect')
 
 class User {
 
-    constructor ({ users_id, username, first_name, last_name, email, pass_word, time_studied }) {
+    constructor ({ users_id, username, first_name, last_name, email, password, time_studied }) {
         this.id = users_id;
         this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
-        this.pass_word = pass_word
+        this.password = password
         this.time_studied = time_studied;
     
     }
-
 
     static async getAll() {
         const response = await db.query("SELECT * FROM users ORDER BY users_id")
@@ -39,17 +38,28 @@ class User {
         return new User(response.rows[0]);
     }
 
+    static async getOneByUsername(username) {
+        const response = await db.query("SELECT * FROM users WHERE username = $1", [
+          username,
+        ]);
+    
+        if (response.rows.length != 1) {
+          throw new Error("Unable to locate user.");
+        }
+        return new User(response.rows[0]);
+      }
+    
     static async create(data) {
-        const { username, first_name, last_name, email, pass_word, time_studied } = data;
-        const response = await db.query("INSERT INTO users (username, first_name, last_name, email, pass_word, time_studied) VALUES ($1, $2, $3, $4, $5, $6 ) RETURNING *;", [username, first_name, last_name, email, pass_word, time_studied])
+        const { username, first_name, last_name, email, password, time_studied } = data;
+        const response = await db.query("INSERT INTO users (username, first_name, last_name, email, password, time_studied) VALUES ($1, $2, $3, $4, $5, $6 ) RETURNING *;", [username, first_name, last_name, email, password, time_studied])
         const userID = response.rows[0].users_id;
         const newUser = await User.getOneByUserId(userID)
         return newUser
     }
 
     async update(data) {
-        const { username, first_name, last_name, email, pass_word, time_studied } = data;
-        const response = await db.query("UPDATE users SET username = $1, first_name = $2, last_name = $3, email = $4, pass_word = $5, time_studied = $6  WHERE users_id = $7 RETURNING *;", [ username, first_name, last_name, email, pass_word, time_studied, this.id]);
+        const { username, first_name, last_name, email, password, time_studied } = data;
+        const response = await db.query("UPDATE users SET username = $1, first_name = $2, last_name = $3, email = $4, password = $5, time_studied = $6  WHERE users_id = $7 RETURNING *;", [ username, first_name, last_name, email, password, time_studied, this.id]);
         const userId = response.rows[0].users_id
         const newUser = await User.getOneByUserId(userId)
         return newUser
