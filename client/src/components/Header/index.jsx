@@ -7,7 +7,7 @@ import 'animate.css'
 export default function Header() {
   return (
     <>
-    <h1 class="animate__animated animate__rubberBand">Pokedoro</h1>
+    <h1 className="animate__animated animate__rubberBand">Pokedoro</h1>
     <div className='header'>
       <div className="navContainer">
         <nav>
