@@ -1,8 +1,9 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState } from 'react';
+import "./index.css"
 
 export default function PokemonForm({ handleSearch }) {
   const [inputValue, setInputValue] = useState("");
-  const [showPokemonList, setShowPokemonList] = useState(false);
+
   function handleInput(e) {
     const newInput = e.target.value;
     setInputValue(newInput);
@@ -13,28 +14,19 @@ export default function PokemonForm({ handleSearch }) {
     handleSearch(inputValue);
     setInputValue("");
   }
-  useEffect(() => {
-    if (showPokemonList) {
-      
-      setTimeout(() => {
-        setShowPokemonList(true);
-      }, 50);
-    }
-  }, [showPokemonList]);
-
 
   return (
-    <div>
-      <form className="search" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={handleInput}
-          placeholder="Search something"
-          value={inputValue}
-          required
-        />
-        <input type="submit" value="Search" />
-      </form>
+    <>
+    <div className="container h-100">
+    <div className="d-flex justify-content-center h-100">
+      <div className="searchbar">
+        
+        <input className="search_input" type="text" name="" value={inputValue} onChange={handleInput}inplaceholder="Search..." />
+        <a onClick={handleSubmit} href="#" className="search_icon"><i className="fas fa-search"></i></a>
+       
+      </div>
     </div>
+  </div>
+  </>
   );
 }
