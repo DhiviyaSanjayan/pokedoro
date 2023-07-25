@@ -1,8 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./index.css"
+import 'animate.css'
+
+
 export default function Header() {
   return (
+    <>
+    <h1 class="animate__animated animate__rubberBand">Pokedoro</h1>
     <div className='header'>
       <div className="navContainer">
         <nav>
@@ -19,5 +24,6 @@ export default function Header() {
         </nav>
       </div>
     </div>
+    </>
   );
 }
