@@ -13,7 +13,6 @@ class User {
     
     }
 
-
     static async getAll() {
         const response = await db.query("SELECT * FROM users ORDER BY users_id")
         if (response.rows.length === 0) {
@@ -30,6 +29,17 @@ class User {
         return new User(response.rows[0]);
     }
 
+    static async getOneByUsername(username) {
+        const response = await db.query("SELECT * FROM users WHERE username = $1", [
+          username,
+        ]);
+    
+        if (response.rows.length != 1) {
+          throw new Error("Unable to locate user.");
+        }
+        return new User(response.rows[0]);
+      }
+    
     static async create(data) {
         const { username, first_name, last_name, email, pass_word, time_studied } = data;
         const response = await db.query("INSERT INTO users (username, first_name, last_name, email, pass_word, time_studied) VALUES ($1, $2, $3, $4, $5, $6 ) RETURNING *;", [username, first_name, last_name, email, pass_word, time_studied])
