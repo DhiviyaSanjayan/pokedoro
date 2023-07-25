@@ -48,7 +48,9 @@ export default function LoginForm() {
   return (
     <div className="login-body">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h1 className="login-title">Sign In</h1>
+        <h1 className="login-title" role="heading">
+          Sign In
+        </h1>
         <input
           type="text"
           className="login-input"
