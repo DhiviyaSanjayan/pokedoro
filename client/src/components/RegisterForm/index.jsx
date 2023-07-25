@@ -7,7 +7,6 @@ export default function RegisterForm() {
     useCredentials();
   const navigate = useNavigate();
   const registerRequest = async (formData) => {
-    console.log(formData);
     const options = {
       method: "POST",
       headers: {
