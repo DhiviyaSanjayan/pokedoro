@@ -15,6 +15,7 @@ async function register(req, res) {
   }
 
 async function login(req, res) {
+try{
     const data = req.body;
     try {
       // retrieve the user from the model based on username inputted
@@ -38,7 +39,11 @@ async function login(req, res) {
     } catch (err) {
       res.status(403).json({ error: err.message });
     }
-  }
+} catch (error) {
+    res.status(401).send({"error": "Could not log in"})
+}
+}
+
 
 async function logout(req, res) {
     const token = req.headers.authorization;
