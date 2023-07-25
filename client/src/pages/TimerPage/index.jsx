@@ -137,7 +137,8 @@ export default function TimerPage() {
           textAlign: "center",
           overflow: "none",
           borderRadius: "50%",
-          fontSize: "2rem",
+          fontSize: "4rem",
+          fontWeight: "bold",
         }}
       >
         {timeConverter(secondsLeft)}
@@ -154,7 +155,8 @@ export default function TimerPage() {
           textAlign: "center",
           overflow: "none",
           borderRadius: "50%",
-          fontSize: "2rem",
+          fontSize: "4rem",
+          fontWeight: "bold",
         }}
       >
         {timeConverter(breakSecondsLeft)}

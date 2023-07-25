@@ -33,7 +33,7 @@ html {
 .login-form {
   padding: 10px;
   display: flex;
-  font-family: "Press Start 2P";
+
   flex-direction: column;
   height: 23%;
   width: 30%;
@@ -45,6 +45,7 @@ html {
 }
 
 .login-title {
+  font-family: "Press Start 2P";
   font-size: 26px;
   letter-spacing: -1.5px;
 }
@@ -61,6 +62,7 @@ html {
 }
 
 .login-form a {
+  font-family: "Press Start 2P";
   font-size: 11px;
 }
 
@@ -96,7 +98,6 @@ html {
   border-radius: 5%;
   box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.8),
     0 25px 55px 0 rgba(0, 0, 0, 0.21);
-  font-family: "Press Start 2P";
   width: 33%;
   height: auto;
   text-align: center;
@@ -125,6 +126,7 @@ html {
   padding-bottom: 1em;
   margin-top: 5px;
   border-radius: 50%;
+  font-family: "digital-clock";
 }
 
 .main-display {
@@ -152,7 +154,6 @@ CountdownCircleTimer {
   align-items: center;
   background-color: #eae9e5;
   font-family: "digital-clock";
-  /* padding-top: 34%; */
 }
 
 .session .overlay {
