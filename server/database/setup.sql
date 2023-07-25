@@ -1,22 +1,19 @@
-DROP TABLE IF EXISTS token;
-DROP TABLE IF EXISTS pokemon;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS token CASCADE;
+DROP TABLE IF EXISTS pokemon CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users (
   users_id INT GENERATED ALWAYS AS IDENTITY,
   username VARCHAR(50) UNIQUE NOT NULL,
-  first_name VARCHAR(50) NOT NULL,
-  last_name VARCHAR(50) NOT NULL,
-  email VARCHAR(100),
-  password VARCHAR(100),
-  time_studied INT,
+  pass_word VARCHAR(100),
+  time_studied INT DEFAULT 0,
   PRIMARY KEY (users_id)
 );
 
 CREATE TABLE token (
     token_id INT GENERATED ALWAYS AS IDENTITY,
     users_id INT NOT NULL,
-    token CHAR(36) UNIQUE NOT NULL,
+    token CHAR(100) UNIQUE NOT NULL,
     PRIMARY KEY (token_id),
     FOREIGN KEY (users_id) REFERENCES users("users_id")
 );
@@ -31,21 +28,18 @@ CREATE TABLE pokemon (
   FOREIGN KEY (users_id) REFERENCES users("users_id")
 );
 
-
-
-INSERT INTO users (username, first_name, last_name, email, password, time_studied)
+INSERT INTO users (username, pass_word, time_studied)
 VALUES
-     ('ronaldo7', 'Cristiano', 'Ronaldo', 'cristiano@example.com', 'secure_password', 150),
-  ('messi10', 'Lionel', 'Messi', 'lionel@example.com', 'strong_password', 130),
-  ('neymarjr', 'Neymar', 'da Silva Santos', 'neymar@example.com', 'safepassword', 110),
-  ('mbappe7', 'Kylian', 'Mbappe', 'kylian@example.com', 'bestpassword', 100),
-  ('ronaldinho10', 'Ronaldinho', 'de Assis Moreira', 'ronaldinho@example.com', 'mypassword', 90),
-  ('beckham23', 'David', 'Beckham', 'david@example.com', 'beckham123', 80),
-  ('zidane5', 'Zinedine', 'Zidane', 'zidane@example.com', 'zidane456', 70),
-  ('pele10', 'Edson Arantes', 'do Nascimento', 'pele@example.com', 'pele789', 60),
-  ('maradona10', 'Diego', 'Maradona', 'maradona@example.com', 'maradona987', 50),
-  ('eusebio13', 'Eusébio', 'da Silva Ferreira', 'eusebio@example.com', 'eusebio654', 40);
-
+  ('ronaldo7','secure_password', 150),
+  ('messi10','strong_password', 130),
+  ('neymarjr', 'safepassword', 110),
+  ('mbappe7', 'bestpassword', 100),
+  ('ronaldinho10', 'mypassword', 90),
+  ('beckham23','beckham123', 80),
+  ('zidane5','zidane456', 70),
+  ('pele10', 'pele789', 60),
+  ('maradona10', 'maradona987', 50),
+  ('eusebio13', 'eusebio654', 40);
 
 
 INSERT INTO pokemon ( name, sprite, evolves_into, users_id)
@@ -436,29 +430,4 @@ VALUES
   ('kyogre', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png', NULL, NULL),
   ('groudon', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/385.png', NULL, NULL),
   ('rayquaza', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/386.png', NULL, NULL);
-  -- ('jirachi', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/388.png', NULL, NULL);
-  -- ('deoxys', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png', NULL, NULL),
-  -- ('turtwig', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/390.png', 'grotle', NULL),
-  -- ('grotle', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/391.png', 'torterra', NULL),
-  -- ('torterra', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/392.png', NULL, NULL),
-  -- ('chimchar', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/393.png', 'monferno', NULL),
-  -- ('monferno', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/394.png', 'infernape', NULL),
-  -- ('infernape', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/395.png', NULL, NULL),
-  -- ('piplup', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/396.png', 'prinplup', NULL),
-  -- ('prinplup', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/397.png', 'empoleon', NULL),
-  -- ('empoleon', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/398.png', NULL, NULL),
-  -- ('starly', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/399.png', 'staravia', NULL),
-  -- ('staravia', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/400.png', 'staraptor', NULL),
-  -- ('staraptor', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/401.png', NULL, NULL),
-  -- ('bidoof', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/402.png', 'bibarel', NULL),
-  -- ('bibarel', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/403.png', NULL, NULL),
-  -- ('kricketot', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/404.png', 'kricketune', NULL),
-  -- ('kricketune', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png', NULL, NULL),
-  -- ('shinx', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/406.png', 'luxio', NULL),
-  -- ('luxio', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/407.png', 'luxray', NULL),
-  -- ('luxray', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/408.png', NULL, NULL),
-  -- ('budew', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/409.png', 'roserade', NULL),
-  -- ('roserade', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/410.png', NULL, NULL),
-  -- ('cranidos', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/411.png', 'rampardos', NULL),
-  -- ('rampardos', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/412.png', NULL, NULL),
-  -- ('shieldon', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/413.png', 'bastiodon', NULL);
+  
