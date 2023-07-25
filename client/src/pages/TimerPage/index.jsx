@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 export default function TimerPage() {
-  const [secondsLeft, setSecondsLeft] = useState(3);
-  const [breakSecondsLeft, setBreakSecondsLeft] = useState(3);
+  const [secondsTotal, setSecondsTotal] = useState(10);
+  const [secondsLeft, setSecondsLeft] = useState(10);
+  const [breakSecondsTotal, setBreakSecondsTotal] = useState(10);
+  const [breakSecondsLeft, setBreakSecondsLeft] = useState(10);
   const [timer, setTimer] = useState();
   const [running, setRunning] = useState(false);
   const [isbreak, setIsbreak] = useState(false);
@@ -56,21 +59,25 @@ export default function TimerPage() {
   const minusSessionTime = () => {
     if (secondsLeft >= 61) {
       setSecondsLeft(secondsLeft - 60);
+      setSecondsTotal(secondsTotal - 60);
     } else return;
   };
 
   const addSessionTime = () => {
     setSecondsLeft(secondsLeft + 60);
+    setSecondsTotal(secondsTotal + 60);
   };
 
   const minusBreakTime = () => {
     if (breakSecondsLeft >= 61) {
       setBreakSecondsLeft(breakSecondsLeft - 60);
+      setBreakSecondsTotal(breakSecondsTotal - 60);
     } else return;
   };
 
   const addBreakTime = () => {
     setBreakSecondsLeft(breakSecondsLeft + 60);
+    setBreakSecondsTotal(breakSecondsTotal + 60);
   };
 
   const resetTimer = () => {
@@ -111,6 +118,44 @@ export default function TimerPage() {
     }
   };
 
+  function renderTime() {
+    return !isbreak ? (
+      <h1
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#eae9e5",
+          width: "90%",
+          height: "90%",
+          textAlign: "center",
+          overflow: "none",
+          borderRadius: "50%",
+          fontSize: "2rem",
+        }}
+      >
+        {timeConverter(secondsLeft)}
+      </h1>
+    ) : (
+      <h1
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#eae9e5",
+          width: "90%",
+          height: "90%",
+          textAlign: "center",
+          overflow: "none",
+          borderRadius: "50%",
+          fontSize: "2rem",
+        }}
+      >
+        {timeConverter(breakSecondsLeft)}
+      </h1>
+    );
+  }
+
   useEffect(() => {
     if (secondsLeft === 0) {
       resetTimer();
@@ -140,25 +185,18 @@ export default function TimerPage() {
     <div className="timer-page">
       <div className="clock">
         <div className="timer">
-          <div
-            className="progress-radial step-0 session"
-            style={isbreak ? { backgroundColor: "#ff2522" } : null}
-          >
-            <div
-              className="main-display overlay"
-              style={isbreak ? { color: "#ff2522" } : null}
+          <div className="progress-radial step-0 session">
+            <CountdownCircleTimer
+              key={timer}
+              isPlaying={running}
+              duration={!isbreak ? secondsTotal : breakSecondsTotal}
+              colors={isbreak ? ["#ff2522"] : ["#00a0b0"]}
+              size={200}
             >
-              {!isbreak ? (
-                <h1>{timeConverter(secondsLeft)}</h1>
-              ) : (
-                <h1>{timeConverter(breakSecondsLeft)}</h1>
-              )}
-            </div>
+              {renderTime}
+            </CountdownCircleTimer>
           </div>
-          <div
-            className="progress-radial step-0 session"
-            style={isbreak ? { backgroundColor: "#ff2522" } : null}
-          >
+          <div className="progress-radial step-0 break">
             <div className="main-display overlay">
               {timerPokemon.sprite ? (
                 <img
