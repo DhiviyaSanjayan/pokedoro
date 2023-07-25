@@ -1,4 +1,30 @@
+const bcrypt = require('bcrypt')
+
 const User = require('../models/User')
+
+async function register (req, res) {
+    try{
+        const data = req.body;
+
+        const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS));
+
+        data.password = await bcrypt.hash(data.password, salt);
+        // data["password"] = await bcrypt.hash(data["password"], salt);
+        
+        console.log(data.password)
+
+        const result = await User.create(data)
+
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(400).send({"error": "Could not register"})
+    }
+};
+
+async function login (req, res) {
+    const data = req.body;
+    res.status(200).send(data);
+};
 
 async function index(req, res) {
     try {
@@ -56,5 +82,5 @@ async function destroy (req, res) {
 
 
 module.exports = {
-  index, show, create, update, destroy
+  index, show, create, update, destroy, register, login
 }
