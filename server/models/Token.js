@@ -4,19 +4,19 @@ const { v4: uuidv4 } = require("uuid");
 const db = require("../database/connect");
 
 class Token {
-  constructor({ token_id, user_id, token }) {
+  constructor({ token_id, users_id, token }) {
     this.token_id = token_id;
-    this.user_id = user_id;
+    this.users_id = users_id;
     this.token = token;
   }
 
-  static async create(user_id) {
+  static async create(users_id) {
     //generate a token using library uuidv4- it generates a random token with a certain number of characters
     const token = uuidv4();
     //insert the token into the token table - and return the tokens id
     const response = await db.query(
-      "INSERT INTO token (user_id, token) VALUES ($1, $2) RETURNING token_id;",
-      [user_id, token]
+      "INSERT INTO token (users_id, token) VALUES ($1, $2) RETURNING token_id;",
+      [users_id, token]
     );
     //grab the token id, check it's in the database and return it
     const newId = response.rows[0].token_id;
@@ -51,7 +51,6 @@ class Token {
     const response = await db.query("DELETE FROM token WHERE token = $1", [
       token,
     ]);
-
     if (!response) {
       throw new Error("Unable to locate token.");
     } else {
