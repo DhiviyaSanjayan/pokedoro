@@ -239,6 +239,29 @@ CountdownCircleTimer {
   background-color: rgba(130, 130, 130, 0.8);
 }
 
+.main-display img:hover {
+  animation: hithere 1s ease;
+}
+
+@keyframes hithere {
+  30% {
+    transform: scale(1.1);
+  }
+  40%,
+  60% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .collection-page {
   height: 100%;
   width: 100%;

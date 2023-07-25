@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import ConfettiExplosion from "react-confetti-explosion";
+import { Box, Modal, Typography, Button } from "@mui/material";
+import Confetti from "react-confetti";
 
 export default function TimerPage() {
-  const [secondsTotal, setSecondsTotal] = useState(10);
-  const [secondsLeft, setSecondsLeft] = useState(10);
-  const [breakSecondsTotal, setBreakSecondsTotal] = useState(10);
-  const [breakSecondsLeft, setBreakSecondsLeft] = useState(10);
+  const [secondsTotal, setSecondsTotal] = useState(5);
+  const [secondsLeft, setSecondsLeft] = useState(5);
+  const [breakSecondsTotal, setBreakSecondsTotal] = useState(5);
+  const [breakSecondsLeft, setBreakSecondsLeft] = useState(5);
   const [timer, setTimer] = useState();
+  const [open, setOpen] = useState(false);
   const [running, setRunning] = useState(false);
   const [isbreak, setIsbreak] = useState(false);
+  const [isExploding, setIsExploding] = useState(false);
   const [timerPokemon, setTimerPokemon] = useState({});
   const [nextPokemon, setNextpokemon] = useState({});
   const { id } = useParams();
@@ -87,6 +92,7 @@ export default function TimerPage() {
   };
 
   const start = () => {
+    setIsExploding(false);
     if (running === false) {
       if (isbreak === false) {
         const timer = setInterval(() => {
@@ -158,6 +164,7 @@ export default function TimerPage() {
 
   useEffect(() => {
     if (secondsLeft === 0) {
+      setIsExploding(true);
       resetTimer();
       setRunning(false);
       setIsbreak(true);
@@ -173,7 +180,8 @@ export default function TimerPage() {
       setIsbreak(false);
       document.querySelector(".time-start").textContent = "Start";
       clearInterval(timer);
-      navigate(`/timer/${nextPokemon.id}`);
+      setOpen(true);
+      setIsExploding(true);
     }
   }, [breakSecondsLeft, timer]);
 
@@ -183,6 +191,66 @@ export default function TimerPage() {
 
   return (
     <div className="timer-page">
+      {isExploding && <ConfettiExplosion width={1000} />}
+      {open && <Confetti />}
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 400,
+            bgcolor: "background.paper",
+            border: "2px solid #000",
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          {timerPokemon.evolves_into ? (
+            <>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your {timerPokemon.name} evolved!
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                Move on to {nextPokemon.name}?
+              </Typography>
+              <br />
+              <Button
+                onClick={() => {
+                  setOpen(false);
+                  navigate(`/timer/${nextPokemon.id}`);
+                }}
+              >
+                Next
+              </Button>
+            </>
+          ) : (
+            <>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your {timerPokemon.name} is fully evolved!
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                Go home?
+              </Typography>
+              <br />
+              <Button
+                onClick={() => {
+                  setOpen(false);
+                  navigate(`/`);
+                }}
+              >
+                Home
+              </Button>
+            </>
+          )}
+        </Box>
+      </Modal>
       <div className="clock">
         <div className="timer">
           <div className="progress-radial step-0 session">
@@ -251,8 +319,12 @@ export default function TimerPage() {
           <button className="time-reset" onClick={resetTimer}>
             Reset
           </button>
+          <button className="time-reset" onClick={() => navigate("/")}>
+            Home
+          </button>
         </div>
       </div>
+      {isExploding && <ConfettiExplosion width={1000} />}
     </div>
   );
 }
