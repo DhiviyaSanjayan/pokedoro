@@ -42,7 +42,7 @@ export default function RegisterForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    registerRequest({ username: usernameValue, password: passwordValue });
+    registerRequest({ username: usernameValue, pass_word: passwordValue });
     setUsernameValue("");
     setPasswordValue("");
   };
