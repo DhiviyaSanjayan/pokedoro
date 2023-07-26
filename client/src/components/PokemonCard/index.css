@@ -6,8 +6,9 @@
    background-size: cover;
    background-position: 33cqb;
    border-radius: 50%;
-   
+   animation: glow 5s ease-in-out infinite;
 }
+
 
 .pokemon-card {
    border: 10px solid;
@@ -22,6 +23,7 @@
    font-family: "Press Start 2P";
    
     border-radius: 5%;
+   
    
  }
 
