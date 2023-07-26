@@ -1,12 +1,23 @@
-import { CollectionCard } from "../../components";
+import { CollectionCard, Header } from "../../components";
 import { useState, useEffect } from "react";
 export default function CollectionPage() {
-  const [collectionPokemon, setCollectionPokemon] = useState([]);
+  const [collectionPokemon, setCollectionPokemon] = useState();
+  const [userID, setUserID] = useState();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  function fetchUserID() {
+    const token = JSON.parse(localStorage.getItem("token"));
+    const id = token.users_id;
+    setUserID(id);
+  }
+
   async function fetchPokemon() {
     try {
-      const response = await fetch("../../pokemon.json");
-      const data = await response.json();
+      const response = await fetch("http://localhost:3000/pokemon");
+      const fullData = await response.json();
+      const data = fullData.filter((pokemon) => pokemon.users_id === userID);
       setCollectionPokemon(data);
+      setIsLoaded(true);
     } catch (error) {
       throw new Error(error);
     }
@@ -14,19 +25,27 @@ export default function CollectionPage() {
 
   useEffect(() => {
     fetchPokemon();
-  }, []);
+    fetchUserID();
+  }, [isLoaded]);
 
   return (
-    <div className="collection-page">
-      {collectionPokemon ? (
-        <div className="collection-grid">
-          {collectionPokemon.map((pokemon, i) => (
-            <CollectionCard collectionPokemon={pokemon} key={i} />
-          ))}
-        </div>
-      ) : (
-        "loading"
-      )}
-    </div>
+    <>
+      <Header />
+      <div className="collection-page">
+        {isLoaded && collectionPokemon ? (
+          <div className="collection-grid">
+            {collectionPokemon.map((pokemon, i) => (
+              <CollectionCard
+                collectionPokemon={pokemon}
+                isLoaded={isLoaded}
+                key={i}
+              />
+            ))}
+          </div>
+        ) : (
+          "loading"
+        )}
+      </div>
+    </>
   );
 }

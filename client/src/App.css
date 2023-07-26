@@ -264,7 +264,7 @@ CountdownCircleTimer {
 }
 
 .collection-page {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: #ececec;
   display: flex;
@@ -274,6 +274,7 @@ CountdownCircleTimer {
 
 .collection-grid {
   margin-top: 50px;
+  margin-top: 10%;
   top: 180px;
   align-self: center;
   justify-content: center;
@@ -284,11 +285,31 @@ CountdownCircleTimer {
   margin-bottom: 50px;
 }
 
-.collection-image {
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 300px;
+  padding: 3px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  cursor: pointer;
   transition: 0.3s ease;
 }
 
-.collection-image:hover {
+.collection-card:hover {
   scale: 1.05;
+}
+
+.collection-image {
+  width: 100%;
+  background-color: #ececec;
+  border-radius: 8px;
+}
+
+.collection-card-title {
+  font-size: 30px;
 }
