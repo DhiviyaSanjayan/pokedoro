@@ -22,6 +22,7 @@ export default function TimerPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    checkAuth();
     fetchPokemon(id);
     fetchUserID();
     fetchNextPokemon();
@@ -36,6 +37,10 @@ export default function TimerPage() {
     } catch (error) {
       throw new Error(error);
     }
+  }
+
+  function checkAuth() {
+    localStorage.length === 0 ? navigate("/login") : null;
   }
 
   async function fetchUserID() {
@@ -319,7 +324,6 @@ export default function TimerPage() {
         <div className="settings">
           <div className="time-session">
             <h6>session time</h6>
-            <p className="time-session-display"></p>
             <button className="minus" onClick={minusSessionTime}>
               -
             </button>
@@ -329,7 +333,6 @@ export default function TimerPage() {
           </div>
           <div className="time-break">
             <h6>break time</h6>
-            <p className="time-break-display"></p>
             <button className="minus" onClick={minusBreakTime}>
               -
             </button>

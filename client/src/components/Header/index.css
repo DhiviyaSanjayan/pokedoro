@@ -141,8 +141,8 @@
 }
 
 .headerBackground {
-  height: 1000px;
-  width: 1450px;
+  height: 100%;
+  width: 100%;
   position: absolute;
   z-index: 0;
 }
@@ -157,11 +157,9 @@
 /* Styles for screen widths between 769px and 1024px (e.g., tablets) */
 @media (min-width: 769px) and (max-width: 1024px) {
   /* Add your styles for tablets here */
-
 }
 
 /* Styles for screen widths greater than or equal to 1025px (e.g., desktops) */
 @media (min-width: 1025px) {
   /* Add your styles for desktops here */
 }
-

@@ -1,9 +1,16 @@
 import { CollectionCard, Header } from "../../components";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function CollectionPage() {
   const [collectionPokemon, setCollectionPokemon] = useState();
   const [userID, setUserID] = useState();
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
+
+  function checkAuth() {
+    localStorage.length === 0 ? navigate("/login") : null;
+  }
 
   function fetchUserID() {
     const token = JSON.parse(localStorage.getItem("token"));
@@ -22,6 +29,10 @@ export default function CollectionPage() {
       throw new Error(error);
     }
   }
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
 
   useEffect(() => {
     fetchPokemon();

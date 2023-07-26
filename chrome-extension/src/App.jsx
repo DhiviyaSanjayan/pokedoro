@@ -7,10 +7,10 @@ import Confetti from "react-confetti";
 import "./App.css";
 
 export default function TimerPage() {
-  const [secondsTotal, setSecondsTotal] = useState(5);
-  const [secondsLeft, setSecondsLeft] = useState(5);
-  const [breakSecondsTotal, setBreakSecondsTotal] = useState(5);
-  const [breakSecondsLeft, setBreakSecondsLeft] = useState(5);
+  const [secondsTotal, setSecondsTotal] = useState(10 * 60);
+  const [secondsLeft, setSecondsLeft] = useState(10 * 60);
+  const [breakSecondsTotal, setBreakSecondsTotal] = useState(5 * 60);
+  const [breakSecondsLeft, setBreakSecondsLeft] = useState(5 * 60);
   const [timer, setTimer] = useState();
   const [open, setOpen] = useState(false);
   const [running, setRunning] = useState(false);
@@ -52,8 +52,8 @@ export default function TimerPage() {
 
   const resetTimer = () => {
     if (!isbreak) {
-      setSecondsLeft(3);
-    } else setBreakSecondsLeft(3);
+      setSecondsLeft(10 * 60);
+    } else setBreakSecondsLeft(5 * 60);
   };
 
   const start = () => {
