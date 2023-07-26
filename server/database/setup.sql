@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
   users_id INT GENERATED ALWAYS AS IDENTITY,
   username VARCHAR(50) UNIQUE NOT NULL,
-  pass_word VARCHAR(100),
+  password VARCHAR(100),
   time_studied INT DEFAULT 0,
   PRIMARY KEY (users_id)
 );

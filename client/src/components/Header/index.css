@@ -6,12 +6,23 @@
 .navContainer {
     position: relative;
   }
-  
-  .navImageleft {
-    max-height: 12vh;
-    max-width: 12vh;
+  .navImageright {
+    max-height: 10vh;
+    max-width: 10vh;
     position: absolute;
-    margin-top: 6%;
+    margin-top: 7.5%;
+    right: 1.2%;
+  }
+  
+  .navImageright:hover + .spanR {
+    display: block;
+    
+  }
+  .navImageleft {
+    max-height: 8.5vh;
+    max-width: 8.5vh;
+    position: absolute;
+    margin-top: 8%;
     left: 2%;
   }
   .navImageleft:hover  {
@@ -73,18 +84,7 @@
     color: white;
   }
   
-  .navImageright {
-    max-height: 14vh;
-    max-width: 14vh;
-    position: absolute;
-    margin-top: 5.5%;
-    right: 1.2%;
-  }
-  
-  .navImageright:hover + .spanR {
-    display: block;
-    
-  }
+
   
   .spanR {
     max-height: 10vh;
