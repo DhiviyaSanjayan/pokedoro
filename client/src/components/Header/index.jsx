@@ -12,15 +12,15 @@ export default function Header() {
     <div className='header'>
       <div className="navContainer">
         <nav>
-        <NavLink to="/collection" className="collectionpage">
+        <NavLink to="/" className="collectionpage">
         
           <img className="navImageleft"src="./src/components/Header/ultraBall.png"/>
-          <span className='spanL'>Collection</span>
+          <span className='spanL'>Home</span>
         </NavLink>
-        <NavLink to="/timer" className="timerpage">
+        <NavLink to="/collection" className="timerpage">
             
             <img className="navImageright" src="./src/components/Header/diveball.png"/>
-            <span className='spanR'>Timer</span>
+            <span className='spanR'>Collection</span>
         </NavLink>
         </nav>
       </div>
