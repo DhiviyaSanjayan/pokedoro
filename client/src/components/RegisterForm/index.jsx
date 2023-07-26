@@ -15,7 +15,7 @@ export default function RegisterForm() {
       },
       body: JSON.stringify({
         username: formData.username,
-        password: formData.password,
+        password: formData.pass_word,
       }),
     };
     const response = await fetch(
@@ -45,7 +45,7 @@ export default function RegisterForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    registerRequest({ username: usernameValue, password: passwordValue });
+    registerRequest({ username: usernameValue, pass_word: passwordValue });
     setUsernameValue("");
     setPasswordValue("");
   };
