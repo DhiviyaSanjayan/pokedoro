@@ -29,7 +29,20 @@ async function getByName(req,res){
     } 
 }
 
+async function update (req, res) {
+    try {
+        const data = req.body;
+        const Id = parseInt(req.params.id)
+        const pokemon = await Pokemon.getOneByPokemonId(Id);
+        const result = await pokemon.update(data);
+       
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(404).json({"error": error.message})
+    }
+}
+
 
 module.exports = {
-    index, getById, getByName
+    index, getById, getByName, update
   }

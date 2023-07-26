@@ -5,6 +5,7 @@ const logger = require('morgan');
 const app = express();
 
 const userRouter = require('./routes/user')
+const pokemonRouter = require('./routes/pokemon')
 
 app.use(cors());
 app.use(express.json());
@@ -20,6 +21,8 @@ app.get("/", (req, res) => {
 
 
 app.use("/users", userRouter);
+
+app.use("/pokemon", pokemonRouter);
 
 
 
