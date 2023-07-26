@@ -108,6 +108,7 @@ html {
 .timer {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -264,7 +265,7 @@ CountdownCircleTimer {
 }
 
 .collection-page {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: #ececec;
   display: flex;
@@ -274,6 +275,7 @@ CountdownCircleTimer {
 
 .collection-grid {
   margin-top: 50px;
+  margin-top: 15%;
   top: 180px;
   align-self: center;
   justify-content: center;
@@ -282,13 +284,93 @@ CountdownCircleTimer {
   grid-template-columns: repeat(4, 20%);
   gap: 20px;
   margin-bottom: 50px;
+  z-index: 1000;
+}
+
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 3px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+.collection-card:hover {
+  scale: 1.05;
 }
 
 .collection-image {
   width: 100%;
-  transition: 0.3s ease;
+  background-color: #ececec;
+  border-radius: 8px;
 }
 
-.collection-image:hover {
-  scale: 1.05;
+.collection-card-title {
+  font-size: 30px;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: url("../assets/pokemon-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.not-found-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.p-and-img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.p-and-img img:hover {
+  animation: hithere 1s ease;
+}
+
+.not-found-container p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+/* Styling for the links */
+.not-found-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.not-found-container a:hover {
+  background-color: #0056b3;
 }

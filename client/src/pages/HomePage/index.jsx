@@ -4,6 +4,13 @@ import { SearchWidget, Header, Carousel } from '../../components';
 
 
 export default function HomePage() {
+  const navigate = useNavigate();
+  function checkAuth() {
+    localStorage.length === 0 ? navigate("/login") : null;
+  }
+  useEffect(() => {
+    checkAuth();
+  }, []);
   return (
   <div className="homepage">
     

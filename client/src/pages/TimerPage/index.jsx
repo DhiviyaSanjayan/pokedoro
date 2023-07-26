@@ -17,11 +17,14 @@ export default function TimerPage() {
   const [isExploding, setIsExploding] = useState(false);
   const [timerPokemon, setTimerPokemon] = useState({});
   const [nextPokemon, setNextpokemon] = useState({});
+  const [userID, setUserID] = useState();
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
+    checkAuth();
     fetchPokemon(id);
+    fetchUserID();
     fetchNextPokemon();
   }, [id, secondsLeft, breakSecondsLeft]);
 
@@ -34,6 +37,31 @@ export default function TimerPage() {
     } catch (error) {
       throw new Error(error);
     }
+  }
+
+  function checkAuth() {
+    localStorage.length === 0 ? navigate("/login") : null;
+  }
+
+  async function fetchUserID() {
+    const token = await JSON.parse(localStorage.getItem("token"));
+    const userId = await token.users_id;
+    await setUserID(userId);
+  }
+
+  async function addPokemonCollection() {
+    const response = await fetch(
+      `http://localhost:3000/pokemon/${timerPokemon.id}`,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "PATCH",
+        body: JSON.stringify({ users_id: parseInt(userID) }),
+      }
+    );
+    const data = await response.json();
   }
 
   async function fetchNextPokemon() {
@@ -181,6 +209,7 @@ export default function TimerPage() {
       setRunning(false);
       setIsbreak(false);
       document.querySelector(".time-start").textContent = "Start";
+      addPokemonCollection();
       clearInterval(timer);
       setOpen(true);
       setIsExploding(true);
@@ -295,7 +324,6 @@ export default function TimerPage() {
         <div className="settings">
           <div className="time-session">
             <h6>session time</h6>
-            <p className="time-session-display"></p>
             <button className="minus" onClick={minusSessionTime}>
               -
             </button>
@@ -305,7 +333,6 @@ export default function TimerPage() {
           </div>
           <div className="time-break">
             <h6>break time</h6>
-            <p className="time-break-display"></p>
             <button className="minus" onClick={minusBreakTime}>
               -
             </button>
