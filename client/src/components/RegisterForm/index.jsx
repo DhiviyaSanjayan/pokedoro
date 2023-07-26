@@ -15,7 +15,7 @@ export default function RegisterForm() {
       },
       body: JSON.stringify({
         username: formData.username,
-        password: formData.password,
+        pass_word: formData.password,
       }),
     };
     const response = await fetch(
@@ -24,10 +24,9 @@ export default function RegisterForm() {
     );
     const data = await response.json();
 
-    if (response.status == 200) {
+    if (response.status == 201) {
       localStorage.setItem("token", JSON.stringify(data.token));
       navigate("/login");
-      const token = JSON.parse(localStorage.getItem("token"));
     } else {
       alert(data.error);
     }
@@ -35,12 +34,10 @@ export default function RegisterForm() {
 
   const handleUsernameChange = (e) => {
     setUsernameValue(e.target.value);
-    console.log(usernameValue);
   };
 
   const handlePasswordChange = (e) => {
     setPasswordValue(e.target.value);
-    console.log(passwordValue);
   };
 
   const handleSubmit = (e) => {

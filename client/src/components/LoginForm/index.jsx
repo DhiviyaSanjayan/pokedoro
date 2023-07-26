@@ -15,12 +15,12 @@ export default function LoginForm() {
       },
       body: JSON.stringify({
         username: formData.username,
-        password: formData.password,
+        pass_word: formData.pass_word,
       }),
     };
     const response = await fetch("http://localhost:3000/users/login", options);
     const data = await response.json();
-
+    console.log(data);
     if (response.status == 200) {
       localStorage.setItem("token", JSON.stringify(data.token));
       navigate("/");
@@ -40,7 +40,7 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginRequest({ username: usernameValue, password: passwordValue });
+    loginRequest({ username: usernameValue, pass_word: passwordValue });
     setUsernameValue("");
     setPasswordValue("");
   };
