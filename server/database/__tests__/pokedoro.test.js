@@ -75,8 +75,6 @@ describe('Authenticator Middleware', () => {
 
     // Call the authenticator middleware with missing token
     await authenticator(reqMissing, res, next);
-
-    // Assert the flow for missing token
     expect(Token.getOneByToken).toHaveBeenCalledWith(missingToken);
     expect(next).not.toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(403);
@@ -89,8 +87,6 @@ describe('Authenticator Middleware', () => {
 
     // Call the authenticator middleware with invalid token
     await authenticator(reqInvalid, res, next);
-
-    // Assert the flow for invalid token
     expect(Token.getOneByToken).toHaveBeenCalledWith(invalidToken);
     expect(next).not.toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(403);
