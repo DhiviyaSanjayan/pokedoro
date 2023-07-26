@@ -3,10 +3,11 @@
     margin-bottom: auto;
     margin-top: 55%;
     height: 60px;
-    background-color: #285ed2;
+    background-color: #26468a;
     border-radius: 30px;
     padding: 10px;
     font-family: "Press Start 2P";
+    z-index: 6;
     }
 
     .search_input{

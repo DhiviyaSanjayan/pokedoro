@@ -32,13 +32,6 @@ export default function PokemonCard({ pokemon }) {
     setLoading(false);
   }
 
-  const handleGetMeClick = () => {
-   
-    const pokemonId = pokemon.id;
-    
-    return <Link to={`/timer/${pokemonId}`}>Get Me!</Link>;
-  };
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -55,8 +48,9 @@ export default function PokemonCard({ pokemon }) {
           </div>
         </div>
       ))}
-      
-      {handleGetMeClick()}
+
+      {/* Render the Link component directly */} 
+      <Link className='getme' to={`/timer/${pokemon.id}`}>Get Me!</Link>
     </div>
   );
 }
