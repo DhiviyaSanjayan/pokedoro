@@ -8,4 +8,8 @@ pokemonRouter.get("/", pokemonController.index)
 
 pokemonRouter.get("/:id", pokemonController.getById)
 
-pokemonRouter.get("/:name", pokemonController.getByName)
+pokemonRouter.patch("/:id", pokemonController.update);
+
+// pokemonRouter.get("/:name", pokemonController.getByName)
+
+module.exports = pokemonRouter

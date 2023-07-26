@@ -13,7 +13,7 @@ userRouter.post("/login", userController.login);
 
 userRouter.delete("/logout", userController.logout);
 
-userRouter.get("/",  authenticator, userController.index);
+userRouter.get("/",  userController.index);
 
 userRouter.get("/:id", userController.show);
 
