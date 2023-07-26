@@ -5,6 +5,7 @@
 
 .navContainer {
     position: relative;
+    z-index: 5;
   }
   .navImageright {
     max-height: 10vh;
@@ -99,4 +100,25 @@
     color: white;
   }
   
+.headerBackground {
+  height: 1100px;
+  position: absolute;
+  z-index:4;
+}
 
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust the font size for smaller screens */
+    /* Add your styles for mobile devices here */
+  }
+}
+
+/* Styles for screen widths between 769px and 1024px (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Add your styles for tablets here */
+}
+
+/* Styles for screen widths greater than or equal to 1025px (e.g., desktops) */
+@media (min-width: 1025px) {
+  /* Add your styles for desktops here */
+}

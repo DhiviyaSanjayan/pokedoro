@@ -7,8 +7,4 @@ h1 {
     border: 0;
 }
 
-.homepage {
-    height:1000px;
-    background-image: url("src/pages/HomePage/homebackground.png");
-    background-size: cover;
-}
+

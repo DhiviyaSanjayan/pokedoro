@@ -7,6 +7,7 @@ import 'animate.css'
 export default function Header() {
   return (
     <>
+    <img className="headerBackground" src="/src/components/Header/homebackground2.png"></img>
     <h1 className="animate__animated animate__rubberBand">Pokedoro</h1>
     <div className='header'>
       <div className="navContainer">
