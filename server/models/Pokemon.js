@@ -2,11 +2,12 @@ const db = require('../database/connect')
 
 class Pokemon {
 
-    constructor ({ pokemon_id, name, sprite, evolves_into }) {
+    constructor ({ pokemon_id, name, sprite, evolves_into, users_id  }) {
         this.id = pokemon_id;
         this.name = name;
         this.sprite = sprite
         this.evolves_into = evolves_into;
+        this.users_id = users_id
     }
 
 static async getAll() {
@@ -35,9 +36,8 @@ static async getOneByName(name) {
     return new Pokemon(response.rows[0]);
   }
 
-  async update(data) {
-    const { name, sprite, evolves_into } = data;
-    const response = await db.query("UPDATE pokemon SET name = $1, sprite = $2, evolves_into = $3  WHERE pokemon_id = $4 RETURNING *;", [ name, sprite, evolves_into, this.id]);
+  async update(users_id) {
+    const response = await db.query("UPDATE pokemon SET users_id = $1  WHERE pokemon_id = $2 RETURNING *;", [ users_id, this.id]);
     const PokemonId = response.rows[0].pokemon_id
     const newPokemon = await Pokemon.getOneByPokemonId(PokemonId)
     return newPokemon

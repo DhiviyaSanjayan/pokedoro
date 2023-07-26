@@ -31,10 +31,10 @@ async function getByName(req,res){
 
 async function update (req, res) {
     try {
-        const data = req.body;
+        const users_id = req.body;
         const Id = parseInt(req.params.id)
         const pokemon = await Pokemon.getOneByPokemonId(Id);
-        const result = await pokemon.update(data);
+        const result = await pokemon.update(users_id);
        
         res.status(200).json(result);
     } catch (error) {
