@@ -12,7 +12,7 @@ export default function Header() {
     <div className='header'>
       <div className="navContainer">
         <nav>
-        <NavLink to="/collections" className="collectionpage">
+        <NavLink to="/collection" className="collectionpage">
         
           <img className="navImageleft"src="./src/components/Header/ultraBall.png"/>
           <span className='spanL'>Collection</span>
