@@ -1,0 +1,10 @@
+{
+  "name": "Pokédoro Chrome Extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "author": "I Can't Centre a Dhiv",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Pokédoro Extension"
+  }
+}
