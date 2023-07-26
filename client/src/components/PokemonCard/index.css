@@ -21,7 +21,7 @@
    text-align: center;
    color: rgb(227, 225, 186);
    font-family: "Press Start 2P";
-   
+   z-index: 7;
     border-radius: 5%;
    
    
@@ -31,3 +31,10 @@
    font-size: 15px;
  }
 
+ .getme {
+   position: absolute;
+   margin-top: 45%;
+   left: 43%;
+   
+   
+ }
