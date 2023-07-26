@@ -1,5 +1,5 @@
 import React from "react";
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { screen, render, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
@@ -56,7 +56,7 @@ describe("Timer component", () => {
   });
 
   it("Displays a pokemon", async () => {
-    vi.spyOn(axios, "get").mockResolvedValueOnce({
+    vi.spyOn(global, "fetch").mockResolvedValueOnce({
       data: [
         {
           id: 1,
@@ -66,10 +66,16 @@ describe("Timer component", () => {
           evolves_into: "ivysaur",
         },
       ],
-    });
-    render(<TimerPage />);
+    }),
+      render(
+        <BrowserRouter>
+          <TimerPage />
+        </BrowserRouter>
+      );
 
-    const image = await screen.findByRole("img");
+    const image = await screen.getAllByText("loading")[0];
+    console.log(image);
+    expect(image.innerHTML).toBe("loading");
   });
 
   afterEach(() => {

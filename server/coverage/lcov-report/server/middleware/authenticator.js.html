@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Header/index.jsx</title>
+    <title>Code coverage report for server/middleware/authenticator.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/Header</a> index.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">server/middleware</a> authenticator.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
@@ -93,63 +93,63 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { NavLink } from 'react-router-dom';
-import "./index.css"
-import 'animate.css'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Token = require("../models/Token");
 &nbsp;
+//check whether client request comes in with a token
+async function authenticator(req, res, next) {
+  try {
+    //req.headers is where you find the extra information in the request
+    // so we use it to access our authorization key we've made
+    const userToken = req.headers["authorization"];
 &nbsp;
-export default function Header() {
-  return (
-    &lt;&gt;
-    &lt;h1 class="animate__animated animate__rubberBand"&gt;Pokedoro&lt;/h1&gt;
-    &lt;div className='header'&gt;
-      &lt;div className="navContainer"&gt;
-        &lt;nav&gt;
-        &lt;NavLink to="/collections" className="collectionpage"&gt;
-        
-          &lt;img className="navImageleft"src="./src/components/Header/ultraBall.png"/&gt;
-          &lt;span className='spanL'&gt;Collection&lt;/span&gt;
-        &lt;/NavLink&gt;
-        &lt;NavLink to="/timer" className="timerpage"&gt;
-            
-            &lt;img className="navImageright" src="./src/components/Header/diveball.png"/&gt;
-            &lt;span className='spanR'&gt;Timer&lt;/span&gt;
-        &lt;/NavLink&gt;
-        &lt;/nav&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;/&gt;
-  );
+    //check there is a user token - throw error if not
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (userToken == "null") {
+<span class="cstat-no" title="statement not covered" >      throw new Error("User not authenticated.");</span>
+    } else {
+      // check the token in the req.headers, actually exists in the token table
+      const validToken = await Token.getOneByToken(userToken);
+      if (!validToken) {
+        throw new Error("User's token doesn't match server");
+      } else {
+        next();
+      }
+    }
+  } catch (err) {
+    res.status(403).json({ error: err.message });
+  }
 }
+&nbsp;
+module.exports = authenticator;
+&nbsp;
+&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -157,7 +157,7 @@ export default function Header() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-26T09:09:21.829Z
+                at 2023-07-26T08:51:25.591Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

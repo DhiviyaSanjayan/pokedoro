@@ -62,6 +62,20 @@ describe("Login form component", () => {
     await userEvent.click(elem);
     expect(screen.getAllByRole("heading")[1].textContent).toBe("Register");
   });
+
+  it("clears the inputs on submit", async () => {
+    const password = screen.getAllByPlaceholderText("Password");
+    expect(password[0].value).toBe("");
+    fireEvent.change(password[0], { target: { value: "testing" } });
+    expect(password[0].value).toBe("testing");
+    const username = screen.getAllByPlaceholderText("Username");
+    expect(username[0].value).toBe("");
+    fireEvent.change(username[0], { target: { value: "testing" } });
+    expect(username[0].value).toBe("testing");
+    await userEvent.click(screen.getByRole("button"));
+    expect(username[0].value).toBe("");
+    expect(password[0].value).toBe("");
+  });
   afterEach(() => {
     cleanup();
   });
