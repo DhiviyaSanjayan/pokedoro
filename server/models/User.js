@@ -38,7 +38,7 @@ class User {
     
     static async create(data) {
         const { username, pass_word, time_studied } = data;
-        const response = await db.query("INSERT INTO users (username, pass_word, time_studied) VALUES ($1, $2, $3 ) RETURNING *;", [username, pass_word, time_studied])
+        const response = await db.query("INSERT INTO users (username, pass_word, time_studied) VALUES ($1, $2, $3 ) RETURNING *;", [username, pass_word, 0])
         const userID = response.rows[0].users_id;
         const newUser = await User.getOneByUserId(userID)
         return newUser
