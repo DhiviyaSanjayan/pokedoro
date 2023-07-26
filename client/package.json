@@ -12,9 +12,14 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.2",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
     "react": "^18.2.0",
+    "react-confetti": "^6.1.0",
+    "react-confetti-explosion": "^2.1.2",
     "react-countdown-circle-timer": "^3.2.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2"
