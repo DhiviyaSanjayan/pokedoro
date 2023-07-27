@@ -22,7 +22,10 @@ export default function RegisterForm() {
     //   "https://pokedoro-api.onrender.com/users/register",
     //   options
     // );
-    const response = await fetch("http://localhost:8080/users/register", options);
+    const response = await fetch(
+      "http://localhost:8080/users/register",
+      options
+    );
     const data = await response.json();
 
     if (response.status == 201) {

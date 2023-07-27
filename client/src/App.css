@@ -18,7 +18,7 @@ html {
 }
 
 .login-body {
-  background-image: url("../assets/loginpage-bg.png");
+  background-image: url("../assets/pokemon-login-bg.png");
   height: 100vh;
   width: 100vw;
   background-size: cover;
@@ -33,25 +33,26 @@ html {
 .login-form {
   padding: 10px;
   display: flex;
-
   flex-direction: column;
-  height: 23%;
-  width: 30%;
-  justify-content: space-between;
+  height: 54.4%;
+  width: 39%;
+  justify-content: center;
   align-items: center;
   background-color: #ff2522;
-  border-radius: 9px;
-  margin-top: 14%;
+  gap: 20px;
+  border-radius: 50%;
+  border: 7px #191919 solid;
 }
 
 .login-title {
   font-family: "Press Start 2P";
   font-size: 26px;
   letter-spacing: -1.5px;
+  color: #ececec;
 }
 
 .login-input {
-  width: 100%;
+  width: 80%;
   padding: 10px 0;
   font-size: 16px;
   color: whitesmoke;
@@ -64,13 +65,14 @@ html {
 .login-form a {
   font-family: "Press Start 2P";
   font-size: 11px;
+  color: #ececec;
 }
 
 .login-button {
   font-family: "Press Start 2P";
   background-color: #ececec;
   border-radius: 5px;
-  width: 100%;
+  width: 80%;
   height: 46px;
   font-size: 20px;
   transition: 0.3s ease;
@@ -95,14 +97,17 @@ html {
 
 .clock {
   background-color: rgba(34, 33, 32, 0.8);
-  border-radius: 5%;
+  border-radius: 50%;
   box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.8),
     0 25px 55px 0 rgba(0, 0, 0, 0.21);
-  width: 33%;
-  height: auto;
+  width: 43.2%;
+  height: 60.1%;
   text-align: center;
-  margin: 0 auto;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .timer {
@@ -169,9 +174,12 @@ CountdownCircleTimer {
 .settings,
 .controls {
   color: #dadadb;
+  font-family: "Press Start 2P";
+  font-size: 12px;
 }
 
 .settings {
+  width: 90%;
   border-top: 1px dotted #818184;
   border-bottom: 1px dotted #818184;
 }
@@ -362,17 +370,24 @@ CountdownCircleTimer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6rem;
+  width: 7rem;
+  height: 3rem;
   padding: 10px;
   text-decoration: none;
   color: #fff;
-  background-color: #007bff;
-  border-radius: 5px;
+  background-color: #d6403a;
+  border-radius: 6px; /* Make it a circle */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   transition: background-color 0.3s ease;
+  font-family: "Press Start 2P";
+  font-size: 10px;
 }
 
 .not-found-container a:hover {
-  background-color: #0056b3;
+  background-color: #c40009; /* Darker red on hover */
 }
 
 .about-page {
@@ -388,6 +403,7 @@ CountdownCircleTimer {
   display: block;
   margin: 0 auto;
   max-width: 400px;
+  margin-top: 50px;
 }
 
 .about-page h1 {
