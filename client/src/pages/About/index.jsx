@@ -1,16 +1,12 @@
 import { Header } from "../../components";
-
+import './index.css'
 export default function About() {
   return (
-    <>
+    <div className="aboutbackground"> 
       <Header />
       <div className="about-page">
-        <img
-          src="../../assets/pokedoro-logo.png"
-          alt="pokedoro"
-          className="logo"
-        />
-        <h1>About</h1>
+        
+        <div className="about-container"><h1 className="about-header">About</h1>
         <h2>What is Pokédoro?</h2>
         <p>
           This website is a Pokémon themed pomodoro app, allowing your study to
@@ -31,7 +27,9 @@ export default function About() {
           extras to add to evolution chains. We aim to add all pokemon to the
           database.
         </p>
+        <img className="ash"src="/src/pages/About/ash.gif"/>
       </div>
-    </>
+      </div>
+      </div>
   );
 }

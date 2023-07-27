@@ -93,12 +93,12 @@
     position: absolute;
     margin-top: 2%;
     left: 1.2%;
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     font-family: "Press Start 2P";
     display: none; 
     color: rgb(254, 242, 0);
-    -webkit-text-stroke: 3px black; 
+    -webkit-text-stroke: 1px black; 
   }
   
 
@@ -108,8 +108,8 @@
     max-width: 10vh;
     position: absolute;
     margin-top: 2%;
-    right: 4%;
-    font-size: 12px;
+    right: 6%;
+    font-size: 15px;
     text-align: center;
     font-family: "Press Start 2P";
     display: none; 
