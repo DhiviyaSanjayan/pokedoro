@@ -30,18 +30,6 @@ class Pokemon {
     return new Pokemon(response.rows[0]);
   }
 
-  static async getOneByName(name) {
-    const response = await db.query(
-      "SELECT * FROM pokemon WHERE name ILIKE $1",
-      [name]
-    );
-
-    if (response.rows.length != 1) {
-      throw new Error("Pokemon with the provided name not found");
-    }
-    return new Pokemon(response.rows[0]);
-  }
-
   async update(data) {
     const users_id = data.users_id;
     const response = await db.query(
