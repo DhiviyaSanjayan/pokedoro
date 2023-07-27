@@ -19,7 +19,7 @@ export default function RegisterForm() {
       }),
     };
     const response = await fetch(
-      "http://localhost:3000/users/register",
+      "https://pokedoro-api.onrender.com/users/register",
       options
     );
     const data = await response.json();

@@ -106,7 +106,7 @@
     </package>
     <package name="server.database">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="connect.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\database\connect.js">
+      <file name="connect.js" path="C:\Users\gokud.DESKTOP-9VK8G70\OneDrive\Desktop\Coding\lap-3\pokedoro\server\database\connect.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="15" count="6" type="stmt"/>
         <line num="17" count="6" type="stmt"/>
@@ -115,19 +115,19 @@
       </file>
     </package>
     <package name="server.middleware">
-      <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
-      <file name="authenticator.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\middleware\authenticator.js">
-        <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <metrics statements="11" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="authenticator.js" path="C:\Users\gokud.DESKTOP-9VK8G70\OneDrive\Desktop\Coding\lap-3\pokedoro\server\middleware\authenticator.js">
+        <metrics statements="11" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="11" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
       </file>
     </package>

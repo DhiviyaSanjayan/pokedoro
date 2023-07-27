@@ -49,8 +49,8 @@ export default function PokemonCard({ pokemon }) {
         </div>
       ))}
 
-      {/* Render the Link component directly */}
-      <Link to={`/timer/${pokemon.id}`}>Get Me!</Link>
+      {/* Render the Link component directly */} 
+      <Link className='getme' to={`/timer/${pokemon.id}`}>Get Me!</Link>
     </div>
   );
 }

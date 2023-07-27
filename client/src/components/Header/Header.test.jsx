@@ -18,10 +18,10 @@ describe("Header component", () => {
     );
   });
 
-  it("Displays a nav bar with two children", () => {
+  it("Displays a nav bar with three children", () => {
     const nav = screen.getByRole("navigation");
     expect(nav).toBeInTheDocument();
-    expect(nav.childNodes.length).toBe(2);
+    expect(nav.childNodes.length).toBe(3);
   });
 
   afterEach(() => {

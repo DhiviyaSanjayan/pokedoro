@@ -1,9 +1,16 @@
 import { CollectionCard, Header } from "../../components";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function CollectionPage() {
   const [collectionPokemon, setCollectionPokemon] = useState();
   const [userID, setUserID] = useState();
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
+
+  function checkAuth() {
+    localStorage.length === 0 ? navigate("/login") : null;
+  }
 
   function fetchUserID() {
     const token = JSON.parse(localStorage.getItem("token"));
@@ -13,7 +20,7 @@ export default function CollectionPage() {
 
   async function fetchPokemon() {
     try {
-      const response = await fetch("http://localhost:3000/pokemon");
+      const response = await fetch("https://pokedoro-api.onrender.com/pokemon");
       const fullData = await response.json();
       const data = fullData.filter((pokemon) => pokemon.users_id === userID);
       setCollectionPokemon(data);
@@ -22,6 +29,10 @@ export default function CollectionPage() {
       throw new Error(error);
     }
   }
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
 
   useEffect(() => {
     fetchPokemon();

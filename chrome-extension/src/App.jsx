@@ -4,81 +4,18 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import ConfettiExplosion from "react-confetti-explosion";
 import { Box, Modal, Typography, Button } from "@mui/material";
 import Confetti from "react-confetti";
+import "./App.css";
 
 export default function TimerPage() {
-  const [secondsTotal, setSecondsTotal] = useState(5);
-  const [secondsLeft, setSecondsLeft] = useState(5);
-  const [breakSecondsTotal, setBreakSecondsTotal] = useState(5);
-  const [breakSecondsLeft, setBreakSecondsLeft] = useState(5);
+  const [secondsTotal, setSecondsTotal] = useState(10 * 60);
+  const [secondsLeft, setSecondsLeft] = useState(10 * 60);
+  const [breakSecondsTotal, setBreakSecondsTotal] = useState(5 * 60);
+  const [breakSecondsLeft, setBreakSecondsLeft] = useState(5 * 60);
   const [timer, setTimer] = useState();
   const [open, setOpen] = useState(false);
   const [running, setRunning] = useState(false);
   const [isbreak, setIsbreak] = useState(false);
   const [isExploding, setIsExploding] = useState(false);
-  const [timerPokemon, setTimerPokemon] = useState({});
-  const [nextPokemon, setNextpokemon] = useState({});
-  const [userID, setUserID] = useState();
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    checkAuth();
-    fetchPokemon(id);
-    fetchUserID();
-    fetchNextPokemon();
-  }, [id, secondsLeft, breakSecondsLeft]);
-
-  async function fetchPokemon(id) {
-    try {
-      const response = await fetch("../../pokemon.json");
-      const dataArr = await response.json();
-      const data = dataArr[id - 1];
-      setTimerPokemon(data);
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
-
-  function checkAuth() {
-    localStorage.length === 0 ? navigate("/login") : null;
-  }
-
-  async function fetchUserID() {
-    const token = await JSON.parse(localStorage.getItem("token"));
-    const userId = await token.users_id;
-    await setUserID(userId);
-  }
-
-  async function addPokemonCollection() {
-    const response = await fetch(
-      `https://pokedoro-api.onrender.com/pokemon/${timerPokemon.id}`,
-      {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        method: "PATCH",
-        body: JSON.stringify({ users_id: parseInt(userID) }),
-      }
-    );
-    const data = await response.json();
-  }
-
-  async function fetchNextPokemon() {
-    try {
-      const response = await fetch("../../pokemon.json");
-      const dataArr = await response.json();
-      const nextPokemonName = timerPokemon.evolves_into;
-      for (let i = 0; i < dataArr.length; i++) {
-        if (dataArr[i].name === nextPokemonName) {
-          const nextPokemonObj = dataArr[i];
-          nextPokemonName ? setNextpokemon(nextPokemonObj) : null;
-        }
-      }
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
 
   const timeConverter = (secs) => {
     const minutes = Math.floor(secs / 60);
@@ -115,8 +52,8 @@ export default function TimerPage() {
 
   const resetTimer = () => {
     if (!isbreak) {
-      setSecondsLeft(3);
-    } else setBreakSecondsLeft(3);
+      setSecondsLeft(10 * 60);
+    } else setBreakSecondsLeft(5 * 60);
   };
 
   const start = () => {
@@ -209,7 +146,6 @@ export default function TimerPage() {
       setRunning(false);
       setIsbreak(false);
       document.querySelector(".time-start").textContent = "Start";
-      addPokemonCollection();
       clearInterval(timer);
       setOpen(true);
       setIsExploding(true);
@@ -222,8 +158,8 @@ export default function TimerPage() {
 
   return (
     <div className="timer-page">
-      {isExploding && <ConfettiExplosion width={1000} />}
-      {open && <Confetti />}
+      {isExploding && <ConfettiExplosion width={200} />}
+      {open && <Confetti width={"300vw"} height={"300vh"} />}
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -236,50 +172,29 @@ export default function TimerPage() {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 400,
+            width: 200,
             bgcolor: "background.paper",
             border: "2px solid #000",
             boxShadow: 24,
             p: 4,
           }}
         >
-          {timerPokemon.evolves_into ? (
-            <>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Your {timerPokemon.name} evolved!
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Move on to {nextPokemon.name}?
-              </Typography>
-              <br />
-              <Button
-                onClick={() => {
-                  setOpen(false);
-                  navigate(`/timer/${nextPokemon.id}`);
-                }}
-              >
-                Next
-              </Button>
-            </>
-          ) : (
-            <>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Your {timerPokemon.name} is fully evolved!
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Go home?
-              </Typography>
-              <br />
-              <Button
-                onClick={() => {
-                  setOpen(false);
-                  navigate(`/`);
-                }}
-              >
-                Home
-              </Button>
-            </>
-          )}
+          <>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              You completed your session!
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Study some more?
+            </Typography>
+            <br />
+            <Button
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              Again
+            </Button>
+          </>
         </Box>
       </Modal>
       <div className="clock">
@@ -295,28 +210,6 @@ export default function TimerPage() {
               {renderTime}
             </CountdownCircleTimer>
           </div>
-          <div className="progress-radial step-0 break">
-            <div className="main-display overlay">
-              {timerPokemon.sprite ? (
-                <img
-                  src={timerPokemon.sprite}
-                  alt={timerPokemon.name}
-                  className="timer-image"
-                  style={
-                    !isbreak
-                      ? secondsLeft % 2 === 0
-                        ? { marginBottom: "5px" }
-                        : null
-                      : breakSecondsLeft % 2 === 0
-                      ? { marginBottom: "5px" }
-                      : null
-                  }
-                />
-              ) : (
-                "loading"
-              )}
-            </div>
-          </div>
         </div>
         <div className="session-info">
           <div className="session-count"></div>
@@ -324,21 +217,25 @@ export default function TimerPage() {
         <div className="settings">
           <div className="time-session">
             <h6>session time</h6>
-            <button className="minus" onClick={minusSessionTime}>
-              -
-            </button>
-            <button className="plus" onClick={addSessionTime}>
-              +
-            </button>
+            <div className="change-time-buttons">
+              <button className="minus" onClick={minusSessionTime}>
+                -
+              </button>
+              <button className="plus" onClick={addSessionTime}>
+                +
+              </button>
+            </div>
           </div>
           <div className="time-break">
             <h6>break time</h6>
-            <button className="minus" onClick={minusBreakTime}>
-              -
-            </button>
-            <button className="plus" onClick={addBreakTime}>
-              +
-            </button>
+            <div className="change-time-buttons">
+              <button className="minus" onClick={minusBreakTime}>
+                -
+              </button>
+              <button className="plus" onClick={addBreakTime}>
+                +
+              </button>
+            </div>
           </div>
         </div>
         <div className="controls">
@@ -348,12 +245,9 @@ export default function TimerPage() {
           <button className="time-reset" onClick={resetTimer}>
             Reset
           </button>
-          <button className="time-reset" onClick={() => navigate("/")}>
-            Home
-          </button>
         </div>
       </div>
-      {isExploding && <ConfettiExplosion width={1000} />}
+      {isExploding && <ConfettiExplosion width={200} />}
     </div>
   );
 }
