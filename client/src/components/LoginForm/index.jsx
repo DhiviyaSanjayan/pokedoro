@@ -18,13 +18,15 @@ export default function LoginForm() {
         pass_word: formData.pass_word,
       }),
     };
-    const response = await fetch("https://pokedoro-api.onrender.com/users/login", options);
+    const response = await fetch(
+      "https://pokedoro-api.onrender.com/users/login",
+      options
+    );
     const data = await response.json();
     console.log(data);
     if (response.status == 200) {
       localStorage.setItem("token", JSON.stringify(data.token));
       navigate("/");
-      const token = JSON.parse(localStorage.getItem("token"));
     } else {
       alert(data.error);
     }

@@ -28,6 +28,7 @@ export default function Header() {
               <span className="spanL">Home</span>
             </NavLink>
             <h3 onClick={() => logout()}>Logout</h3>
+            <h3 onClick={() => navigate("/about")}>About</h3>
             <NavLink to="/collection" className="timerpage">
               <img
                 className="navImageright"
