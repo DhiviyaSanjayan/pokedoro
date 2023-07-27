@@ -374,3 +374,36 @@ CountdownCircleTimer {
 .not-found-container a:hover {
   background-color: #0056b3;
 }
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #ececec;
+  height: 100vh;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.about-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.about-page h2 {
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
+}
+
+.about-page p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
