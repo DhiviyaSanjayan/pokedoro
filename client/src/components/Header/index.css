@@ -1,16 +1,7 @@
 .animate__animated {
   position: absolute;
-<<<<<<< HEAD
   font-family:  'Pokemon Solid', sans-serif;
   color:rgb(227, 214, 214);
-=======
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-  font-family: "Pokemon Solid", sans-serif;
-  color: white;
->>>>>>> 81595f43f90aa3070d4fca8d0c0fbfaf579918a0
   text-align: center;
   width: 100%;
 }
@@ -40,7 +31,6 @@
   color: red;
 }
 .navContainer {
-<<<<<<< HEAD
     position: relative;
     z-index: 5;
   }
@@ -132,14 +122,6 @@
 .headerBackground {
   height: 1000px;
   width: 1425px;
-=======
-  position: relative;
-  z-index: 5;
-}
-.navImageright {
-  max-height: 8vh;
-  max-width: 8vh;
->>>>>>> 81595f43f90aa3070d4fca8d0c0fbfaf579918a0
   position: absolute;
   margin-top: 4.7%;
   right: 1%;
