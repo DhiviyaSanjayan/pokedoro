@@ -19,32 +19,20 @@ async function getById(req, res) {
   }
 }
 
-async function getByName(req, res) {
+async function update(req, res) {
   try {
-    const name = req.params.name;
-    const pokemon = await Pokemon.getOneByName(name);
-    res.status(200).json(pokemon);
+    const data = req.body;
+    const Id = parseInt(req.params.id);
+    const pokemon = await Pokemon.getOneByPokemonId(Id);
+    const result = await pokemon.update(data);
+    res.status(200).json(result);
   } catch (error) {
     res.status(404).json({ error: error.message });
   }
 }
 
-async function update (req, res) {
-    try {
-        const users_id = req.body;
-        const Id = parseInt(req.params.id)
-        const pokemon = await Pokemon.getOneByPokemonId(Id);
-        const result = await pokemon.update(users_id);
-       
-        res.status(200).json(result);
-    } catch (error) {
-        res.status(404).json({"error": error.message})
-    }
-}
-
 module.exports = {
   index,
   getById,
-  getByName,
   update,
 };
