@@ -1,14 +1,14 @@
-const Pokemon = require("../../models/Pokemon");
-const Token = require('../../models/Token');
-const authenticator = require('../../middleware/authenticator')
-const User = require('../../models/User')
-const db = require('../connect');
+const Pokemon = require("../models/Pokemon");
+const Token = require('../models/Token');
+const authenticator = require('../middleware/authenticator')
+const User = require('../models/User')
+const db = require('../database/connect');
 
 const request = require("supertest");
-const app = require("../../app");
+const app = require("../app");
 const { Pool } = require('pg')
 
-const pool = require('../connect');
+const pool = require('../database/connect');
 
 describe('Authenticator Middleware', () => {
     it('should allow access for valid token', async () => {

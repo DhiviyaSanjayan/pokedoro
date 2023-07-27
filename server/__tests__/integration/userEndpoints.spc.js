@@ -1,4 +1,4 @@
-const {createDbEnv, populateDbEnv, destroyDbEnv, } = require("../../setup-test-db");
+const {createDbEnv, populateDbEnv, destroyDbEnv, } = require("../../database/setup-test-db");
   
   describe("users endpoints", () => {
     let api;
