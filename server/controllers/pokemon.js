@@ -19,16 +19,6 @@ async function getById(req, res) {
   }
 }
 
-async function getByName(req, res) {
-  try {
-    const name = req.params.name;
-    const pokemon = await Pokemon.getOneByName(name);
-    res.status(200).json(pokemon);
-  } catch (error) {
-    res.status(404).json({ error: error.message });
-  }
-}
-
 async function update(req, res) {
   try {
     const data = req.body;
@@ -44,6 +34,5 @@ async function update(req, res) {
 module.exports = {
   index,
   getById,
-  getByName,
   update,
 };
