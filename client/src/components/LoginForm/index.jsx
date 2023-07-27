@@ -18,26 +18,15 @@ export default function LoginForm() {
         pass_word: formData.pass_word,
       }),
     };
-<<<<<<< HEAD
     // const response = await fetch("https://pokedoro-api.onrender.com/users/login", options);
     const response = await fetch("http://localhost:8080/users/login", options);
-=======
-    const response = await fetch(
-      "https://pokedoro-api.onrender.com/users/login",
-      options
-    );
->>>>>>> ecded170fd501d41b284b8905ceb869e3064d578
     const data = await response.json();
     console.log(data);
     
     if (response.status == 200) {
       localStorage.setItem("token", JSON.stringify(data.token));
       navigate("/");
-<<<<<<< HEAD
       } else {
-=======
-    } else {
->>>>>>> ecded170fd501d41b284b8905ceb869e3064d578
       alert(data.error);
     }
   };
