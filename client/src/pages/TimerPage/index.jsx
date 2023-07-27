@@ -115,8 +115,8 @@ export default function TimerPage() {
 
   const resetTimer = () => {
     if (!isbreak) {
-      setSecondsLeft(3);
-    } else setBreakSecondsLeft(3);
+      setSecondsLeft(5);
+    } else setBreakSecondsLeft(5);
   };
 
   const start = () => {

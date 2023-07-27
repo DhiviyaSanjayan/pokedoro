@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690454127849" clover="3.2.0">
-  <project timestamp="1690454127850" name="All files">
-    <metrics statements="197" coveredstatements="142" conditionals="24" coveredconditionals="13" methods="31" coveredmethods="24" elements="252" coveredelements="179" complexity="0" loc="197" ncloc="197" packages="6" files="10" classes="10"/>
+<coverage generated="1690456520003" clover="3.2.0">
+  <project timestamp="1690456520003" name="All files">
+    <metrics statements="208" coveredstatements="150" conditionals="26" coveredconditionals="14" methods="34" coveredmethods="25" elements="268" coveredelements="189" complexity="0" loc="208" ncloc="208" packages="6" files="11" classes="11"/>
     <package name="server">
       <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="app.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\app.js">
+      <file name="app.js" path="/Users/Harry/Desktop/pokedoro/server/app.js">
         <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -24,7 +24,7 @@
     </package>
     <package name="server.controllers">
       <metrics statements="73" coveredstatements="35" conditionals="2" coveredconditionals="0" methods="11" coveredmethods="7"/>
-      <file name="pokemon.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\controllers\pokemon.js">
+      <file name="pokemon.js" path="/Users/Harry/Desktop/pokedoro/server/controllers/pokemon.js">
         <metrics statements="18" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -45,7 +45,7 @@
         <line num="30" count="0" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
       </file>
-      <file name="user.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\controllers\user.js">
+      <file name="user.js" path="/Users/Harry/Desktop/pokedoro/server/controllers/user.js">
         <metrics statements="55" coveredstatements="26" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="5"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -105,35 +105,49 @@
       </file>
     </package>
     <package name="server.database">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="connect.js" path="C:\Users\gokud.DESKTOP-9VK8G70\OneDrive\Desktop\Coding\lap-3\pokedoro\server\database\connect.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="21" count="6" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
+      <metrics statements="15" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
+      <file name="connect.js" path="/Users/Harry/Desktop/pokedoro/server/database/connect.js">
+        <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="4" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+      </file>
+      <file name="setup-test-db.js" path="/Users/Harry/Desktop/pokedoro/server/database/setup-test-db.js">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
       </file>
     </package>
     <package name="server.middleware">
-      <metrics statements="11" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="authenticator.js" path="C:\Users\gokud.DESKTOP-9VK8G70\OneDrive\Desktop\Coding\lap-3\pokedoro\server\middleware\authenticator.js">
-        <metrics statements="11" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <file name="authenticator.js" path="/Users/Harry/Desktop/pokedoro/server/middleware/authenticator.js">
+        <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
       </file>
     </package>
     <package name="server.models">
       <metrics statements="75" coveredstatements="60" conditionals="18" coveredconditionals="10" methods="18" coveredmethods="16"/>
-      <file name="Pokemon.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\models\Pokemon.js">
+      <file name="Pokemon.js" path="/Users/Harry/Desktop/pokedoro/server/models/Pokemon.js">
         <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
         <line num="1" count="3" type="stmt"/>
         <line num="5" count="8" type="stmt"/>
@@ -156,7 +170,7 @@
         <line num="41" count="1" type="stmt"/>
         <line num="45" count="3" type="stmt"/>
       </file>
-      <file name="Token.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\models\Token.js">
+      <file name="Token.js" path="/Users/Harry/Desktop/pokedoro/server/models/Token.js">
         <metrics statements="23" coveredstatements="20" conditionals="6" coveredconditionals="3" methods="5" coveredmethods="5"/>
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
@@ -182,7 +196,7 @@
         <line num="57" count="1" type="stmt"/>
         <line num="62" count="3" type="stmt"/>
       </file>
-      <file name="User.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\models\User.js">
+      <file name="User.js" path="/Users/Harry/Desktop/pokedoro/server/models/User.js">
         <metrics statements="32" coveredstatements="20" conditionals="8" coveredconditionals="3" methods="8" coveredmethods="6"/>
         <line num="2" count="3" type="stmt"/>
         <line num="7" count="11" type="stmt"/>
@@ -220,7 +234,7 @@
     </package>
     <package name="server.routes">
       <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="pokemon.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\routes\pokemon.js">
+      <file name="pokemon.js" path="/Users/Harry/Desktop/pokedoro/server/routes/pokemon.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -230,7 +244,7 @@
         <line num="11" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="user.js" path="C:\Users\salim\OneDrive\Desktop\liskov\lap3\lap3project\pokedoro\server\routes\user.js">
+      <file name="user.js" path="/Users/Harry/Desktop/pokedoro/server/routes/user.js">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
