@@ -9,7 +9,7 @@ export default function Carousel() {
         <img className="pikachuIMG"src="src/components/Carousel/pikachu.gif" />
       </div>
       <div className="butter-container">
-      <img className="butterIMG"src="/src/components/Carousel/butterfree.gif" />
+      <img className="butterIMG"src="/src/components/Carousel/pokeball.png" />
 
       </div>
     </div>
