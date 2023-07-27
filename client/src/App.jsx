@@ -7,6 +7,8 @@ import {
   RegisterPage,
   TimerPage,
   CollectionPage,
+  NotFound,
+  About,
 } from "./pages";
 
 function App() {
@@ -15,9 +17,10 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/about" element={<About />} />
       <Route path="/timer/:id" element={<TimerPage />} />
       <Route path="/collection/" element={<CollectionPage />} />
-      <Route path="*" element={<h1>Not found</h1>} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

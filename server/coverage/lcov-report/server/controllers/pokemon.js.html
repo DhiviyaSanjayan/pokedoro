@@ -23,9 +23,15 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">39.13% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>9/23</span>
+=======
+                <span class="strong">50% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>9/18</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
@@ -37,16 +43,28 @@
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>2/4</span>
+=======
+                <span class="strong">66.66% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/3</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">39.13% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>9/23</span>
+=======
+                <span class="strong">50% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>9/18</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
@@ -61,7 +79,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,6 +119,7 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
+<<<<<<< HEAD
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
@@ -114,6 +133,9 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+=======
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -139,6 +161,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<<<<<<< HEAD
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,6 +174,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+=======
+<span class="cline-any cline-no">&nbsp;</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -161,7 +187,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<<<<<<< HEAD
 <span class="cline-any cline-neutral">&nbsp;</span>
+=======
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Pokemon = require("../models/Pokemon");
 &nbsp;
@@ -184,16 +213,27 @@ async function getById(req, res) {
   }
 }
 &nbsp;
+<<<<<<< HEAD
 async function <span class="fstat-no" title="function not covered" >getByName(</span>req, res) {
 <span class="cstat-no" title="statement not covered" >  try {</span>
     const name = <span class="cstat-no" title="statement not covered" >req.params.name;</span>
     const pokemon = <span class="cstat-no" title="statement not covered" >await Pokemon.getOneByName(name);</span>
 <span class="cstat-no" title="statement not covered" >    res.status(200).json(pokemon);</span>
+=======
+async function <span class="fstat-no" title="function not covered" >update(</span>req, res) {
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const data = <span class="cstat-no" title="statement not covered" >req.body;</span>
+    const Id = <span class="cstat-no" title="statement not covered" >parseInt(req.params.id);</span>
+    const pokemon = <span class="cstat-no" title="statement not covered" >await Pokemon.getOneByPokemonId(Id);</span>
+    const result = <span class="cstat-no" title="statement not covered" >await pokemon.update(data);</span>
+<span class="cstat-no" title="statement not covered" >    res.status(200).json(result);</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    res.status(404).json({ error: error.message });</span>
   }
 }
 &nbsp;
+<<<<<<< HEAD
 async function <span class="fstat-no" title="function not covered" >update </span>(req, res) {
 <span class="cstat-no" title="statement not covered" >    try {</span>
         const users_id = <span class="cstat-no" title="statement not covered" >req.body;</span>
@@ -211,6 +251,11 @@ module.exports = {
   index,
   getById,
   getByName,
+=======
+module.exports = {
+  index,
+  getById,
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
   update,
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -220,7 +265,11 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+<<<<<<< HEAD
                 at 2023-07-27T10:25:52.851Z
+=======
+                at 2023-07-27T10:35:27.811Z
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         <script src="../../prettify.js"></script>
         <script>

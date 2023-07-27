@@ -23,9 +23,15 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">45.45% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>25/55</span>
+=======
+                <span class="strong">47.27% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>26/55</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
@@ -44,9 +50,15 @@
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">45.45% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>25/55</span>
+=======
+                <span class="strong">47.27% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>26/55</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
@@ -247,44 +259,58 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<<<<<<< HEAD
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+=======
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<<<<<<< HEAD
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+=======
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -361,7 +387,11 @@ async function show(req,res){
     try{
         const id = parseInt(req.params.id);
         const user = await User.getOneByUserId(id);
+<<<<<<< HEAD
 <span class="cstat-no" title="statement not covered" >        res.status(200).json(user)</span>
+=======
+        res.status(200).json(user)
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
     } catch (error) {
         res.status(404).json({"error": error.message})
     } 
@@ -395,8 +425,13 @@ async function destroy (req, res) {
     try {
         const Id = req.params.id
         const user = await User.getOneByUserId(Id);
+<<<<<<< HEAD
         const result = <span class="cstat-no" title="statement not covered" >await user.destroy()</span>
 <span class="cstat-no" title="statement not covered" >        res.status(204).json(result)</span>
+=======
+        const result = await user.destroy()
+        res.status(204).json(result)
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
     } catch (error) {
         res.status(404).json({"error": error.message})
     }
@@ -412,7 +447,11 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+<<<<<<< HEAD
                 at 2023-07-27T10:25:52.851Z
+=======
+                at 2023-07-27T10:35:27.811Z
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         <script src="../../prettify.js"></script>
         <script>

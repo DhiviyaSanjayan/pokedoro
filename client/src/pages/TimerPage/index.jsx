@@ -22,6 +22,7 @@ export default function TimerPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    checkAuth();
     fetchPokemon(id);
     fetchUserID();
     fetchNextPokemon();
@@ -38,6 +39,10 @@ export default function TimerPage() {
     }
   }
 
+  function checkAuth() {
+    localStorage.length === 0 ? navigate("/login") : null;
+  }
+
   async function fetchUserID() {
     const token = await JSON.parse(localStorage.getItem("token"));
     const userId = await token.users_id;
@@ -46,7 +51,7 @@ export default function TimerPage() {
 
   async function addPokemonCollection() {
     const response = await fetch(
-      `http://localhost:3000/pokemon/${timerPokemon.id}`,
+      `https://pokedoro-api.onrender.com/pokemon/${timerPokemon.id}`,
       {
         headers: {
           Accept: "application/json",
@@ -319,7 +324,6 @@ export default function TimerPage() {
         <div className="settings">
           <div className="time-session">
             <h6>session time</h6>
-            <p className="time-session-display"></p>
             <button className="minus" onClick={minusSessionTime}>
               -
             </button>
@@ -329,7 +333,6 @@ export default function TimerPage() {
           </div>
           <div className="time-break">
             <h6>break time</h6>
-            <p className="time-break-display"></p>
             <button className="minus" onClick={minusBreakTime}>
               -
             </button>

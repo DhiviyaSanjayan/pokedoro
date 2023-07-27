@@ -23,30 +23,54 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">51.51% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>17/33</span>
+=======
+                <span class="strong">63.63% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>21/33</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>2/8</span>
+=======
+                <span class="strong">37.5% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>3/8</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>4/8</span>
+=======
+                <span class="strong">75% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>6/8</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">53.12% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>17/32</span>
+=======
+                <span class="strong">62.5% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>20/32</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         
             
@@ -133,14 +157,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<<<<<<< HEAD
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
+=======
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<<<<<<< HEAD
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -150,6 +182,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+=======
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,12 +247,12 @@ class User {
     
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    st</span>atic async getAll() {
-        const response = <span class="cstat-no" title="statement not covered" >await db.query("SELECT * FROM users ORDER BY users_id")</span>
-<span class="cstat-no" title="statement not covered" >        if (response.rows.length === 0) {</span>
+    static async getAll() {
+        const response = await db.query("SELECT * FROM users ORDER BY users_id")
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (response.rows.length === 0) {
 <span class="cstat-no" title="statement not covered" >            throw new Error("users not found")</span>
         }
-<span class="cstat-no" title="statement not covered" >        return response.rows.map(<span class="fstat-no" title="function not covered" >u </span>=&gt; <span class="cstat-no" title="statement not covered" >new User(u))</span>;</span>
+        return response.rows.map(u =&gt; new User(u));
     }
 &nbsp;
     static async getOneByUserId(id) {
@@ -262,7 +305,11 @@ module.exports = User;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+<<<<<<< HEAD
                 at 2023-07-27T10:25:52.851Z
+=======
+                at 2023-07-27T10:35:27.811Z
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
             </div>
         <script src="../../prettify.js"></script>
         <script>

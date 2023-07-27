@@ -18,10 +18,11 @@ export default function RegisterForm() {
         pass_word: formData.password,
       }),
     };
-    const response = await fetch(
-      "http://localhost:3000/users/register",
-      options
-    );
+    // const response = await fetch(
+    //   "https://pokedoro-api.onrender.com/users/register",
+    //   options
+    // );
+    const response = await fetch("http://localhost:8080/users/register", options);
     const data = await response.json();
 
     if (response.status == 201) {
@@ -42,7 +43,7 @@ export default function RegisterForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    registerRequest({ username: usernameValue, pass_word: passwordValue });
+    registerRequest({ username: usernameValue, password: passwordValue });
     setUsernameValue("");
     setPasswordValue("");
   };

@@ -30,7 +30,10 @@ class Pokemon {
     return new Pokemon(response.rows[0]);
   }
 
+<<<<<<< HEAD
  
+=======
+>>>>>>> 3fd3865fae754e15b2b0221c6a9226f0f5a50a95
   async update(data) {
     const users_id = data.users_id;
     const response = await db.query(
