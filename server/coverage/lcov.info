@@ -157,7 +157,11 @@ BRF:2
 BRH:1
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:database\setup-test-db.js
+=======
 SF:database/setup-test-db.js
+>>>>>>> 81595f43f90aa3070d4fca8d0c0fbfaf579918a0
 FN:3,(anonymous_0)
 FN:14,(anonymous_1)
 FN:20,(anonymous_2)
@@ -378,7 +382,11 @@ BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:routes\user.js
+=======
 SF:routes/user.js
+>>>>>>> 81595f43f90aa3070d4fca8d0c0fbfaf579918a0
 FNF:0
 FNH:0
 DA:1,1

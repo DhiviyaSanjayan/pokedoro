@@ -1,0 +1,19 @@
+.about-container{
+    text-align: center;
+    position: relative;
+    height: 100%
+}
+
+.about-header{
+    font-family: "Press Start 2P";
+    position: relative;
+    padding:30px;
+}
+
+.about-header h2{
+    font-family: "Press Start 2P";
+    font-size: 10px;
+}
+.ash {
+    height: 40px;
+}

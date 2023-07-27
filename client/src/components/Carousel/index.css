@@ -18,8 +18,8 @@
     position: absolute;
     margin-top: 30%;
     height: 100px;
-    animation: slideInOut 10s infinite cubic-bezier(0, 0, 1, 1), spin 1s linear infinite; /* Combine slideInOut and spin animations */
-    animation-delay: 1s; /* Add a delay of 2 seconds */
+    animation: slideInOut 11s infinite cubic-bezier(0, 0, 1, 1), spin 1s linear infinite; /* Combine slideInOut and spin animations */
+   
     z-index: 10;
 }
 @keyframes spin {
