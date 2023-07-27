@@ -18,10 +18,11 @@ export default function RegisterForm() {
         pass_word: formData.password,
       }),
     };
-    const response = await fetch(
-      "https://pokedoro-api.onrender.com/users/register",
-      options
-    );
+    // const response = await fetch(
+    //   "https://pokedoro-api.onrender.com/users/register",
+    //   options
+    // );
+    const response = await fetch("http://localhost:8080/users/register", options);
     const data = await response.json();
 
     if (response.status == 201) {
