@@ -1,16 +1,7 @@
 .animate__animated {
   position: absolute;
-<<<<<<< HEAD
   font-family:  'Pokemon Solid', sans-serif;
   color:rgb(227, 214, 214);
-=======
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-  font-family: "Pokemon Solid", sans-serif;
-  color: white;
->>>>>>> 81595f43f90aa3070d4fca8d0c0fbfaf579918a0
   text-align: center;
   width: 100%;
 }
@@ -40,7 +31,6 @@
   color: red;
 }
 .navContainer {
-<<<<<<< HEAD
     position: relative;
     z-index: 5;
   }
@@ -49,7 +39,7 @@
     max-width: 8vh;
     position: relative;
     margin-top: 4.7%;
-    left: 90.5%;
+    left: 94.5%;
     
     
   }
@@ -103,7 +93,7 @@
     max-height: 9vh;
     max-width: 9vh;
     position: absolute;
-    margin-top: 2%;
+    margin-top: 11%;
     left: 1.2%;
     font-size: 15px;
     text-align: center;
@@ -132,18 +122,9 @@
 .headerBackground {
   height: 1000px;
   width: 1425px;
-=======
-  position: relative;
-  z-index: 5;
-}
-.navImageright {
-  max-height: 8vh;
-  max-width: 8vh;
->>>>>>> 81595f43f90aa3070d4fca8d0c0fbfaf579918a0
   position: absolute;
-  margin-top: 4.7%;
-  right: 1%;
-}
+
+ }
 
 .navImageright:hover + .spanR {
   display: block;
@@ -209,31 +190,8 @@
   animation-iteration-count: infinite;
 }
 
-.spanL {
-  max-height: 9vh;
-  max-width: 9vh;
-  position: absolute;
-  margin-top: 10%;
-  left: 1.6%;
-  font-size: 10px;
-  text-align: center;
-  font-family: "Press Start 2P";
-  display: none;
-  color: white;
-}
 
-.spanR {
-  max-height: 10vh;
-  max-width: 10vh;
-  position: absolute;
-  margin-top: 10%;
-  right: 1.6%;
-  font-size: 10px;
-  text-align: center;
-  font-family: "Press Start 2P";
-  display: none;
-  color: white;
-}
+
 
 .headerBackground {
   height: 1000px;
