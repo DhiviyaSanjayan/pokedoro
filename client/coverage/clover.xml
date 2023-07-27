@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690388291428" clover="3.2.0">
-  <project timestamp="1690388291429" name="All files">
-    <metrics statements="575" coveredstatements="431" conditionals="50" coveredconditionals="29" methods="33" coveredmethods="23" elements="658" coveredelements="483" complexity="0" loc="575" ncloc="575" packages="5" files="5" classes="5"/>
+<coverage generated="1690451794046" clover="3.2.0">
+  <project timestamp="1690451794046" name="All files">
+    <metrics statements="578" coveredstatements="435" conditionals="50" coveredconditionals="29" methods="34" coveredmethods="23" elements="662" coveredelements="487" complexity="0" loc="578" ncloc="578" packages="5" files="5" classes="5"/>
     <package name="components.Header">
-      <metrics statements="43" coveredstatements="40" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="1"/>
+      <metrics statements="44" coveredstatements="41" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="1"/>
       <file name="index.jsx" path="/Users/Harry/Desktop/pokedoro/client/src/components/Header/index.jsx">
-        <metrics statements="43" coveredstatements="40" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="1"/>
+        <metrics statements="44" coveredstatements="41" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -49,12 +49,13 @@
         <line num="41" count="1" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.LoginForm">
-      <metrics statements="75" coveredstatements="66" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+      <metrics statements="77" coveredstatements="69" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
       <file name="index.jsx" path="/Users/Harry/Desktop/pokedoro/client/src/components/LoginForm/index.jsx">
-        <metrics statements="75" coveredstatements="66" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+        <metrics statements="77" coveredstatements="69" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -75,34 +76,34 @@
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="15" type="stmt"/>
-        <line num="33" count="15" type="cond" truecount="1" falsecount="0"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
-        <line num="36" count="15" type="stmt"/>
-        <line num="37" count="15" type="cond" truecount="1" falsecount="0"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="40" count="15" type="stmt"/>
-        <line num="41" count="15" type="cond" truecount="1" falsecount="0"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="15" type="stmt"/>
+        <line num="35" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="15" type="stmt"/>
+        <line num="39" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="15" type="stmt"/>
+        <line num="43" count="15" type="cond" truecount="1" falsecount="0"/>
         <line num="44" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="47" count="15" type="stmt"/>
-        <line num="48" count="15" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
         <line num="49" count="15" type="stmt"/>
         <line num="50" count="15" type="stmt"/>
         <line num="51" count="15" type="stmt"/>
@@ -130,6 +131,8 @@
         <line num="73" count="15" type="stmt"/>
         <line num="74" count="15" type="stmt"/>
         <line num="75" count="15" type="stmt"/>
+        <line num="76" count="15" type="stmt"/>
+        <line num="77" count="15" type="stmt"/>
       </file>
     </package>
     <package name="components.RegisterForm">
