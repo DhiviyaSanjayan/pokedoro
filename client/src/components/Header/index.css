@@ -136,6 +136,7 @@
   display: none;
   color: rgb(254, 242, 0);
   -webkit-text-stroke: 1px black;
+  z-index: 50000;
 }
 
 .headerBackground {

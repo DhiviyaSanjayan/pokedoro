@@ -20,7 +20,7 @@ export default function CollectionPage() {
 
   async function fetchPokemon() {
     try {
-      const response = await fetch("https://pokedoro-api.onrender.com/pokemon");
+      const response = await fetch("http://localhost:8080/pokemon");
       const fullData = await response.json();
       const data = fullData.filter((pokemon) => pokemon.users_id === userID);
       setCollectionPokemon(data);
