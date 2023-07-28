@@ -51,7 +51,7 @@ export default function TimerPage() {
 
   async function addPokemonCollection() {
     const response = await fetch(
-      `https://pokedoro-api.onrender.com/pokemon/${timerPokemon.id}`,
+      `http://localhost:8080/pokemon/${timerPokemon.id}`,
       {
         headers: {
           Accept: "application/json",
